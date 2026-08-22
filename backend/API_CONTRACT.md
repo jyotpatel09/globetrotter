@@ -54,6 +54,13 @@ Get a specific trip by ID.
 - **Response**: `200 OK`, `data`: Trip object (including `stops` and nested `city`)
 - **Error**: `404 Not Found`
 
+### `GET /trips/:id/itinerary`
+Get the complete aggregated itinerary for a trip.
+- **Purpose**: Returns the full Trip including all Stops (ordered by arrival) and their associated TripActivities (ordered by scheduledAt), along with nested City and Activity details.
+- **Auth required**: Yes
+- **Response**: `200 OK`, `data`: Trip object (including nested `stops` -> `city` & `activities` -> `activity`). Empty stops/activities arrays are returned if none exist.
+- **Error**: `404 Not Found` (if the trip does not exist)
+
 ### `PATCH /trips/:id`
 Update a specific trip.
 - **Auth required**: Yes

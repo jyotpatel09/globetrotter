@@ -114,3 +114,34 @@ export const deleteTrip = async (req: Request, res: Response, next: NextFunction
     next(error);
   }
 };
+export const getTripItinerary = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { id } = req.params as any;
+
+    const trip = await prisma.trip.findUnique({
+      where: { id },
+      include: {
+        stops: {
+          orderBy: { arrival: 'asc' },
+          include: {
+            city: true,
+            activities: {
+              orderBy: { scheduledAt: 'asc' },
+              include: {
+                activity: true,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    if (!trip) {
+      return sendError(res, 'Trip not found', 404);
+    }
+
+    sendSuccess(res, trip);
+  } catch (error) {
+    next(error);
+  }
+};
