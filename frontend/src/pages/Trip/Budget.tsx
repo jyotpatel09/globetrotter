@@ -202,7 +202,7 @@ export const Budget: React.FC = () => {
                     <span className="material-symbols-outlined text-[18px] text-primary/70">
                       {categoryIcons[cat.name]}
                     </span>
-                    {cat.name}
+                    {cat.name === 'Food' ? 'Food & Dining' : cat.name}
                   </span>
                   <span className="font-bold text-primary">
                     ${cat.total} <span className="text-[12px] text-on-surface-variant font-normal">({cat.pct}%)</span>
@@ -249,7 +249,7 @@ export const Budget: React.FC = () => {
                       <div>
                         <h4 className="font-semibold text-deep-forest text-[14px] leading-tight">{exp.title}</h4>
                         <p className="text-[11.5px] text-on-surface-variant flex items-center gap-2 mt-1">
-                          <span className="capitalize">{exp.category}</span>
+                          <span className="capitalize">{exp.category === 'Food' ? 'Food & Dining' : exp.category}</span>
                           <span>•</span>
                           <span>
                             {new Date(exp.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
@@ -317,7 +317,7 @@ export const Budget: React.FC = () => {
               >
                 {categories.map((c) => (
                   <option key={c} value={c}>
-                    {c}
+                    {c === 'Food' ? 'Food & Dining' : c}
                   </option>
                 ))}
               </select>

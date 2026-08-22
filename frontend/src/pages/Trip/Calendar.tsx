@@ -125,53 +125,49 @@ export const Calendar: React.FC = () => {
         {/* Desktop View (Weekly Grid Layout) */}
         <div className="hidden md:block overflow-x-auto">
           <div className="min-w-[800px] grid grid-cols-7 gap-4">
-            {/* Header Columns */}
-            {calendarDays.slice(0, 7).map((day, idx) => (
-              <div key={idx} className="bg-surface-container-low border border-deep-forest/5 p-4 rounded-xl text-center space-y-1">
-                <span className="font-bold text-deep-forest font-headline-sm text-[15px]">{day.label}</span>
-                <p className="text-[11px] text-on-surface-variant font-medium tracking-wide uppercase">{day.dateStr.split(',')[1] || day.dateStr}</p>
-              </div>
-            ))}
+            {calendarDays.map((day, idx) => (
+              <div key={idx} className="flex flex-col gap-3 min-h-[300px]">
+                {/* Day Header */}
+                <div className="bg-surface-container-low border border-deep-forest/5 p-3 rounded-xl text-center space-y-0.5 shrink-0">
+                  <span className="font-bold text-deep-forest font-headline-sm text-[14px]">{day.label}</span>
+                  <p className="text-[10px] text-on-surface-variant font-medium tracking-wide uppercase">
+                    {day.dateStr.includes(',') ? day.dateStr.split(',')[1].trim() : day.dateStr}
+                  </p>
+                </div>
 
-            {/* Content Cells */}
-            {calendarDays.slice(0, 7).map((day, idx) => (
-              <div key={idx} className="min-h-[250px] bg-surface-container-low/30 border border-dashed border-outline-variant/40 rounded-xl p-3 space-y-3">
-                {day.activities.length > 0 ? (
-                  day.activities.map((tripAct) => (
-                    <div
-                      key={tripAct.id}
-                      onClick={() => navigate(`/trips/${trip.id}/builder`)}
-                      className="bg-white border border-deep-forest/5 hover:border-terracotta p-3 rounded-lg shadow-sm text-[11.5px] text-left cursor-pointer transition-all space-y-1"
-                    >
-                      <div className="flex items-center justify-between font-semibold text-deep-forest leading-tight">
-                        <span className="line-clamp-1">{tripAct.activity?.name}</span>
+                {/* Day Activities Box */}
+                <div className="flex-1 bg-surface-container-low/30 border border-dashed border-outline-variant/40 rounded-xl p-3 space-y-2.5">
+                  {day.activities.length > 0 ? (
+                    day.activities.map((tripAct) => (
+                      <div
+                        key={tripAct.id}
+                        onClick={() => navigate(`/trips/${trip.id}/builder`)}
+                        className="bg-white border border-deep-forest/5 hover:border-terracotta p-2.5 rounded-lg shadow-sm text-[11px] text-left cursor-pointer transition-all space-y-1"
+                      >
+                        <div className="font-semibold text-deep-forest leading-tight line-clamp-2">
+                          {tripAct.activity?.name}
+                        </div>
+                        
+                        <div className="flex justify-between items-center text-[9.5px] text-on-surface-variant pt-1 border-t border-outline-variant/10">
+                          <span className="text-secondary font-semibold uppercase">
+                            {tripAct.activity?.category}
+                          </span>
+                          <span className="flex items-center gap-0.5 shrink-0">
+                            <span className="material-symbols-outlined text-[10px]">schedule</span>
+                            {tripAct.scheduledAt ? new Date(tripAct.scheduledAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }) : 'TBD'}
+                          </span>
+                        </div>
                       </div>
-                      
-                      <div className="flex justify-between items-center text-[10px] text-on-surface-variant pt-1 border-t border-outline-variant/10">
-                        <span className="flex items-center gap-0.5 text-secondary font-semibold uppercase">
-                          {tripAct.activity?.category}
-                        </span>
-                        <span className="flex items-center gap-0.5">
-                          <span className="material-symbols-outlined text-[12px]">schedule</span>
-                          {tripAct.scheduledAt ? new Date(tripAct.scheduledAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }) : 'TBD'}
-                        </span>
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <span className="text-[11px] text-on-surface-variant/40 italic block text-center pt-8">
-                    Free day
-                  </span>
-                )}
+                    ))
+                  ) : (
+                    <span className="text-[11px] text-on-surface-variant/40 italic block text-center pt-8">
+                      Free day
+                    </span>
+                  )}
+                </div>
               </div>
             ))}
           </div>
-
-          {calendarDays.length > 7 && (
-            <p className="text-[13px] text-on-surface-variant italic text-center pt-4">
-              Showing first 7 days of the journey. View the Itinerary tab for the full day-by-day vertical journal.
-            </p>
-          )}
         </div>
 
         {/* Mobile View (Vertical Agenda Layout) */}
