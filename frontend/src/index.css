@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface antialiased;
+  }
+}
+
+/* Custom Editorial Form Inputs from Stitch */
+.input-underline {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid theme('colors.outline-variant');
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 0;
+  transition: border-color 0.2s ease;
+}
+
+.input-underline:focus {
+  outline: none;
+  box-shadow: none;
+  border-bottom: 2px solid theme('colors.primary');
+}
+
+.input-underline::placeholder {
+  color: theme('colors.outline');
+}
+
+/* Hide default Chrome autofill yellow background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: theme('colors.on-surface');
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Custom Scrollbar for split panes (Builder View) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.surface-container-low');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.outline-variant');
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.outline');
+}
+
+/* Stitch Editorial Borders and Shadows */
+.editorial-border {
+  border: 1px solid rgba(18, 18, 18, 0.08);
+}
+
+.ambient-shadow {
+  box-shadow: 0 12px 32px rgba(26, 58, 50, 0.08);
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Activity Discovery - Kyoto</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#1f1c0b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#82a499",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#772f0c",
+                        "outline-variant": "#c1c8c4",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#002019",
+                        "on-tertiary-fixed-variant": "#4c4733",
+                        "surface-tint": "#45655b",
+                        "on-secondary-fixed": "#370e00",
+                        "surface-container-highest": "#e3e2e1",
+                        "tertiary-container": "#393422",
+                        "surface-container-high": "#e8e8e6",
+                        "primary-fixed-dim": "#abcec2",
+                        "primary-fixed": "#c7eade",
+                        "inverse-primary": "#abcec2",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#414846",
+                        "surface-variant": "#e3e2e1",
+                        "on-surface": "#1a1c1b",
+                        "on-tertiary-container": "#a49c85",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffdbce",
+                        "tertiary-fixed-dim": "#cec6ad",
+                        "surface-bright": "#faf9f7",
+                        "surface-container": "#eeeeec",
+                        "on-background": "#1a1c1b",
+                        "background": "#faf9f7",
+                        "secondary": "#974723",
+                        "secondary-fixed-dim": "#ffb598",
+                        "on-primary-fixed-variant": "#2d4d44",
+                        "surface": "#faf9f7",
+                        "primary": "#02241d",
+                        "tertiary-fixed": "#ebe2c8",
+                        "on-error": "#ffffff",
+                        "tertiary": "#231f0e",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f1f1ef",
+                        "secondary-container": "#ff996e",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f3130",
+                        "outline": "#717975",
+                        "primary-container": "#1a3a32",
+                        "on-secondary-fixed-variant": "#79300e",
+                        "surface-dim": "#dadad8",
+                        "surface-container-low": "#f4f4f2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Playfair Display"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased pb-24 md:pb-0 pt-[80px]">
+<!-- TopAppBar (Web) -->
+<header class="hidden md:flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto bg-background dark:bg-background fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out">
+<div class="font-headline-sm text-headline-sm font-semibold text-primary dark:text-primary-fixed">GlobeTrotter</div>
+<nav class="flex space-x-8">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-opacity" href="#">Dashboard</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-opacity" href="#">My Trips</a>
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed border-b-2 border-primary hover:opacity-80 transition-opacity" href="#">Discover</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-opacity" href="#">Profile</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="text-primary hover:opacity-80 transition-opacity"><span class="material-symbols-outlined" data-icon="search">search</span></button>
+<button class="text-primary hover:opacity-80 transition-opacity"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button>
+<button class="text-primary hover:opacity-80 transition-opacity"><span class="material-symbols-outlined" data-icon="favorite">favorite</span></button>
+</div>
+</header>
+<!-- TopAppBar (Mobile) -->
+<header class="md:hidden flex justify-between items-center w-full px-margin-mobile py-4 bg-background fixed top-0 left-0 right-0 z-50 shadow-sm transition-all duration-300 ease-in-out">
+<div class="font-headline-sm text-headline-sm font-semibold text-primary">GlobeTrotter</div>
+<div class="flex items-center space-x-4">
+<button class="text-primary hover:opacity-80 transition-opacity"><span class="material-symbols-outlined" data-icon="search">search</span></button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12">
+<!-- Header Section -->
+<section class="mb-12 text-center md:text-left">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Kyoto, Japan</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Adding activities to Oct 17 – Oct 21</p>
+</section>
+<!-- Search & Categories -->
+<section class="mb-16">
+<div class="relative w-full md:w-2/3 lg:w-1/2 mb-8 mx-auto md:mx-0">
+<span class="material-symbols-outlined absolute left-4 top-1/2 transform -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-xl border border-outline-variant bg-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md text-on-surface placeholder-outline shadow-sm transition-all" placeholder="What do you want to experience?" type="text"/>
+</div>
+<div class="flex overflow-x-auto space-x-4 pb-4 no-scrollbar -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<button class="px-6 py-2 rounded-full border border-primary bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap transition-colors">All</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant bg-surface text-on-surface hover:bg-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors">Attractions</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant bg-surface text-on-surface hover:bg-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors">Food &amp; Dining</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant bg-surface text-on-surface hover:bg-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors">Nature</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant bg-surface text-on-surface hover:bg-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors">Culture</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant bg-surface text-on-surface hover:bg-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors">Adventure</button>
+</div>
+</section>
+<!-- Featured Experience -->
+<section class="mb-20">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-6">Featured Experience</h2>
+<div class="relative w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A breathtaking, cinematic shot of the iconic thousands of vibrant vermilion torii gates winding up the wooded forested mountain path of Fushimi Inari Taisha in Kyoto, Japan. Sunlight filters through the dense canopy, casting a warm, serene glow and intricate shadows on the sacred stone path. The mood is tranquil, spiritual, and perfectly captures a premium, high-end travel editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNXjww8QPYsLPkZal8UjnHmkN-Ey0_pbOdb9eBIgE7RTd8J9--AWyI4h9XnGJxDBXgY_YkcZ_k1VN0Tv1PA0vDCbw-4vFFgq_bgxZa1UcQzlGjiyfAmzHnAS-JNZuxCE8w553s9cXAOTq2AB52Y9z2VHflryWlWif7K8PlFlbHvzT-ee-UVySSB96X5IcPOKeADoS702JYjyocbMKDi_waB3r5kZKo6Gioga3i0GgRaPgRzTvsQMUkUw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 md:p-10 flex flex-col md:flex-row md:items-end justify-between">
+<div class="mb-4 md:mb-0">
+<span class="inline-block px-3 py-1 bg-surface/20 backdrop-blur-md text-on-primary rounded-full font-label-sm text-label-sm border border-surface/30 mb-3">Culture</span>
+<h3 class="font-headline-md text-headline-md text-on-primary mb-2">Fushimi Inari Shrine</h3>
+<div class="flex items-center space-x-4 text-on-primary/80 font-label-sm text-label-sm">
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1" data-icon="schedule">schedule</span> 2-3 hours</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1 text-secondary-container" data-icon="payments">payments</span> Free</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary border border-on-primary/20 px-8 py-3 rounded-xl font-label-md text-label-md hover:bg-primary-container transition-colors shadow-[0_12px_32px_rgba(26,58,50,0.2)]">Add to Trip</button>
+</div>
+</div>
+</section>
+<!-- Activity Grid -->
+<section>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-8">Popular in Kyoto</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group border border-outline-variant/30 rounded-xl overflow-hidden bg-surface hover:shadow-[0_12px_32px_rgba(26,58,50,0.08)] transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A serene, high-quality photograph looking straight up into the towering, lush green stalks of the Arashiyama Bamboo Grove in Kyoto. The soft, diffused light of early morning creates a calm, ethereal atmosphere, typical of a luxury travel magazine feature." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRI2GfRd-lpYleVvGBlrVNqpB5d3r5pemMTGL1xOqVBnDUXAH6OMrWCsjUqPk75baw71XKSL9SsJg5ruG1CjfBYgknNLjKquNIO43yBa6B3cR1WFLTXqJuY-FJScR46JthbwDTKPbNBGgKUu0pUWKdP_nNaCwe14kf5im5TiOLwArPg0bUeRBLsSntw2SIL34xQSBWKypbILDQrUx9pSS9Bj4D8ZN1vVL4f1TlorhCjA79UIPgE6-t1Q"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-on-surface hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<span class="text-secondary font-label-sm text-label-sm mb-2 block">Nature</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Arashiyama Bamboo Grove</h3>
+<div class="flex items-center space-x-4 text-on-surface-variant font-label-sm text-label-sm mb-6">
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1" data-icon="schedule">schedule</span> 1-2 hours</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1 text-secondary" data-icon="payments">payments</span> Free</span>
+</div>
+<button class="w-full border border-primary text-primary hover:bg-primary/5 py-2 rounded-xl font-label-md text-label-md transition-colors">Add to Trip</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group border border-outline-variant/30 rounded-xl overflow-hidden bg-surface hover:shadow-[0_12px_32px_rgba(26,58,50,0.08)] transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A pristine, elegant shot of Kinkaku-ji, the Golden Pavilion in Kyoto, shimmering brightly as it reflects perfectly on the calm, dark waters of the surrounding pond. The scene is framed by manicured Japanese pine trees, conveying a sense of timeless cultural beauty and refined editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7HaFJ8Bw1jHa2KxPA0_Vkq5NOHU5hL__W4GhZG-97MOxDizkAXJ6M1jsmGb8_ncocFmx4QIbb4ubO-o0Tsl603LB_w0z_tAuZYy2YEgS5P6QL0RuSEFJsApZgaw8K4-KVao_sunwQ6Ux6zqhS-0kYDpom6X2o0UcfDZSXyMiU47BWayeyOWzTARvb2Aos6rdq4tmJL1G163MNt25tNbo_McsOq9z5qEGnSX20LyTd-adnxIgNZcUauA"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-on-surface hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<span class="text-secondary font-label-sm text-label-sm mb-2 block">Attractions</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Kinkaku-ji (Golden Pavilion)</h3>
+<div class="flex items-center space-x-4 text-on-surface-variant font-label-sm text-label-sm mb-6">
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1" data-icon="schedule">schedule</span> 1 hour</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1 text-secondary" data-icon="payments">payments</span> $</span>
+</div>
+<button class="w-full border border-primary text-primary hover:bg-primary/5 py-2 rounded-xl font-label-md text-label-md transition-colors">Add to Trip</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group border border-outline-variant/30 rounded-xl overflow-hidden bg-surface hover:shadow-[0_12px_32px_rgba(26,58,50,0.08)] transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="An intimate, moody, and sophisticated photograph of a traditional Japanese tea ceremony taking place in a minimalist tatami room. Focus is on the delicate hands of the host whisking matcha in a rustic ceramic bowl, illuminated by soft, natural light filtering through a shoji screen. The style is modern editorial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsgy7PWfi6h4kEICCy3IyJM2czn3SVHbxx3pldAL0Xt7Av3wBHX7-8pOA0VhVFrdrn-TDa254gCEr9sJKg6IrWleUDkPBfxoZuhzF7ZKNZaZx0uzOr9f4A0Dg4CXkcgtkTi6IisL_Pt21hd1IxJX5bfr-tvHyj4vGPTI0XcJYSMdvkBxSSAI11qabgfh50_-QN_TyiRXbc8z5FpX4iJtfU8RtUcVkP4ruKF4bowW6lMDuscys8O3S0Aw"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-on-surface hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<span class="text-secondary font-label-sm text-label-sm mb-2 block">Culture</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Traditional Tea Ceremony</h3>
+<div class="flex items-center space-x-4 text-on-surface-variant font-label-sm text-label-sm mb-6">
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1" data-icon="schedule">schedule</span> 1.5 hours</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1 text-secondary" data-icon="payments">payments</span> $$</span>
+</div>
+<button class="w-full border border-primary text-primary hover:bg-primary/5 py-2 rounded-xl font-label-md text-label-md transition-colors">Add to Trip</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group border border-outline-variant/30 rounded-xl overflow-hidden bg-surface hover:shadow-[0_12px_32px_rgba(26,58,50,0.08)] transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A vibrant, bustling street photography shot inside the narrow, covered Nishiki Market in Kyoto. The focus is on a beautifully arranged stall displaying fresh, colorful Japanese delicacies and skewers. The lighting is warm and inviting, capturing the energetic yet curated feel of a high-end food travelogue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxkge3BpzJyh4qyA7rAQUb9pi55HYooSkXVXinA6LcZILO0F5u-MJdk1RcqJz_4KFxMczs_UXd31u-ky-NbeDb0r2q0oPBVco9Z_B84fxdJAiQVqM2gfqWr-R_6u-WkXrV1o_ADkiiqK8b0sWXNV2Ov1kFTiXXEDmABNZp0H61HSh8CHKvyRADx0WGZgM1pqSMVPh9hr41CWInCGF6WfWD_G9Fg8c_uyz58WpTuPXewpUGq-w1EbfbAA"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-on-surface hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<span class="text-secondary font-label-sm text-label-sm mb-2 block">Food &amp; Dining</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Nishiki Market Tour</h3>
+<div class="flex items-center space-x-4 text-on-surface-variant font-label-sm text-label-sm mb-6">
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1" data-icon="schedule">schedule</span> 2 hours</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1 text-secondary" data-icon="payments">payments</span> $$</span>
+</div>
+<button class="w-full border border-primary text-primary hover:bg-primary/5 py-2 rounded-xl font-label-md text-label-md transition-colors">Add to Trip</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container-low dark:bg-surface-container-low shadow-sm transition-all duration-200">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:bg-surface-container-highest dark:hover:bg-surface-container-highest rounded-xl transition-colors">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:bg-surface-container-highest dark:hover:bg-surface-container-highest rounded-xl transition-colors">
+<span class="material-symbols-outlined mb-1" data-icon="map">map</span>
+<span class="font-label-sm text-label-sm">My Trips</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-container text-on-primary-container dark:text-on-primary-container rounded-full px-4 py-1 hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:bg-surface-container-highest dark:hover:bg-surface-container-highest rounded-xl transition-colors">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</nav>
+</body></html>

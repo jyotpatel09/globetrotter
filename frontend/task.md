@@ -1,0 +1,41 @@
+# GlobeTrotter Frontend Implementation Tasks
+
+- [x] Project Foundation Setup
+  - [x] Create `frontend/package.json`
+  - [x] Create `frontend/tsconfig.json`
+  - [x] Create `frontend/vite.config.ts`
+  - [x] Create `frontend/postcss.config.js`
+  - [x] Create `frontend/tailwind.config.js`
+  - [x] Create `frontend/index.html`
+- [x] Core Setup & Styles
+  - [x] Create `frontend/src/vite-env.d.ts`
+  - [x] Create `frontend/src/index.css` (with brand fonts & styles)
+  - [x] Create `frontend/src/main.tsx`
+  - [x] Create `frontend/src/App.tsx` (routing configuration)
+- [x] Data & Services (Mock and Real backend API Client)
+  - [x] Create `frontend/src/api/client.ts` (centralized fetch client)
+  - [x] Create `frontend/src/data/mockData.ts`
+  - [x] Create `frontend/src/services/api.ts` (interfaces)
+  - [x] Create `frontend/src/services/tripService.ts` (dual mock / API client integration)
+  - [x] Create `frontend/.env.example`
+- [x] Shared Layouts & UI Components
+  - [x] Create `frontend/src/components/Layouts/AppLayout.tsx`
+  - [x] Create `frontend/src/components/UI/Button.tsx`
+  - [x] Create `frontend/src/components/UI/Input.tsx`
+  - [x] Create `frontend/src/components/UI/Modal.tsx`
+- [x] Pages Implementation
+  - [x] Auth: Login & Register
+  - [x] Core: Dashboard, My Trips & Create Trip
+  - [x] Discovery: City Discovery & Activity Discovery
+  - [x] Trip Details: Itinerary Builder, Itinerary View, Budget, Calendar, Shared Trip
+  - [x] User: Profile
+- [x] Stitch Design System Refinements
+  - [x] Color palette and background mapping (`#02241d`, `#974723`, `#faf9f7`)
+  - [x] Corner radius normalization (`rounded-xl` for cards, `rounded-lg` for inputs, `rounded-full` for pills)
+  - [x] Align vertical timeline tracks and bullets across all device layouts
+  - [x] Format categories and label mappings (`Food` -> `Food & Dining`)
+- [x] Final Hackathon QA Pass
+  - [x] Interactive route tests and demo path walkthroughs
+  - [x] Responsive layout validations down to 360px widths
+  - [x] Icon and typography audits
+  - [x] Verify production compilation builds and active dev servers

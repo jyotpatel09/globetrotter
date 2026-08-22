@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Japan: Autumn Discovery - GlobeTrotter</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#ffdbce",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-bright": "#faf9f7",
+                      "error-container": "#ffdad6",
+                      "on-tertiary": "#ffffff",
+                      "background": "#faf9f7",
+                      "on-surface": "#1a1c1b",
+                      "tertiary-fixed-dim": "#cec6ad",
+                      "outline-variant": "#c1c8c4",
+                      "on-primary-fixed-variant": "#2d4d44",
+                      "tertiary-container": "#393422",
+                      "on-tertiary-fixed-variant": "#4c4733",
+                      "error": "#ba1a1a",
+                      "on-background": "#1a1c1b",
+                      "on-tertiary-container": "#a49c85",
+                      "inverse-on-surface": "#f1f1ef",
+                      "on-primary-container": "#82a499",
+                      "on-tertiary-fixed": "#1f1c0b",
+                      "primary-fixed": "#c7eade",
+                      "on-surface-variant": "#414846",
+                      "secondary-container": "#ff996e",
+                      "surface-variant": "#e3e2e1",
+                      "on-primary": "#ffffff",
+                      "secondary": "#974723",
+                      "tertiary": "#231f0e",
+                      "inverse-primary": "#abcec2",
+                      "primary-container": "#1a3a32",
+                      "primary-fixed-dim": "#abcec2",
+                      "on-secondary-container": "#772f0c",
+                      "surface-dim": "#dadad8",
+                      "surface-container-highest": "#e3e2e1",
+                      "tertiary-fixed": "#ebe2c8",
+                      "on-primary-fixed": "#002019",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#2f3130",
+                      "primary": "#02241d",
+                      "surface": "#faf9f7",
+                      "on-secondary-fixed-variant": "#79300e",
+                      "on-secondary-fixed": "#370e00",
+                      "surface-tint": "#45655b",
+                      "secondary-fixed-dim": "#ffb598",
+                      "surface-container": "#eeeeec",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-container-high": "#e8e8e6",
+                      "outline": "#717975",
+                      "surface-container-low": "#f4f4f2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-desktop": "48px",
+                      "unit": "8px",
+                      "margin-mobile": "16px",
+                      "container-max": "1280px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Playfair Display"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "headline-sm": ["Playfair Display"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "headline-md": ["Playfair Display"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Playfair Display"]
+              },
+              "fontSize": {
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .symbol-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-surface w-full h-16 border-b border-outline-variant/30 sticky top-0 z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-full">
+<a class="font-display-lg text-headline-sm text-primary dark:text-primary-fixed-dim tracking-tight" href="#">GlobeTrotter</a>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">Explore</a>
+</div>
+<button class="text-primary dark:text-primary-fixed-dim font-label-md text-label-md hover:text-primary transition-colors duration-200 scale-95 active:opacity-80 transition-all border border-primary px-4 py-2 rounded-full hover:bg-primary/5">
+                Sign In
+            </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pb-32"> <!-- Padding bottom for sticky FAB -->
+<!-- Hero Section -->
+<header class="relative w-full h-[60vh] min-h-[400px]">
+<div class="absolute inset-0 bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A breathtaking view of Mount Fuji during autumn, surrounded by vibrant red and orange maple leaves. The sky is a clear, crisp blue, and the lighting is soft and golden, characteristic of a late afternoon. The scene evokes a sense of tranquility and majestic beauty, capturing the essence of an editorial travel feature." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdW7Fvb52O65gHyy6Tgm8mADnltPUH4eCuBagvI-1iwueh4447TsnHUbdiDTInzXwPa5Kp_Ca6WaF08RKl5GJxDpjloQuqUp60sXXUSp3lNlTQrC5vGU6HH78sChvjQeR2vE0mHjn2FhPw6d0SW_iIQXvudqiaravA9kXVuFM45BFgr9dEoAXE9b4kwX0kaeE8Y4PmGBZkSm4fPbbSXzpuB-OfcEy_vqdr5-ryLJc6gPV6dBUoBdwtjQ"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full px-margin-mobile pb-margin-mobile flex flex-col gap-unit">
+<div class="flex items-center gap-2">
+<span class="bg-surface-container-lowest/80 backdrop-blur-sm px-3 py-1 rounded-full font-label-sm text-label-sm text-primary">Public Itinerary</span>
+<span class="bg-surface-container-lowest/80 backdrop-blur-sm px-3 py-1 rounded-full font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">favorite</span> 2.4k
+                    </span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-2">Japan: Autumn Discovery</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">A curated 12-day journey through Tokyo, Kyoto, and Osaka focusing on seasonal foliage and cultural immersion.</p>
+<div class="flex items-center gap-4 mt-4">
+<div class="flex items-center gap-2">
+<img class="w-10 h-10 rounded-full object-cover border-2 border-surface-container-lowest" data-alt="A close-up portrait of a stylish travel writer with a warm smile, wearing a casual yet chic outfit suitable for exploring a city. The background is slightly blurred, suggesting a bustling urban environment. The lighting is natural and flattering, emphasizing a premium, editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1u7jC01RJft0oKRitNMKq9Ptc6Jn3uNPAezu5aDMbiStcI9vr_0nRu6QUtizzcDGhc7WL4BsFgrp-rHN7Jlj13n6GrKO4P1YYLwYbCVqjQmZpSqjxemCHzLRyNRawH2Qx3M1nrWUh-p6p13G1QzFOUg9bOjCT80vaoxfZYbjmBUa4MD6KkgUuwDk9QQGExlgFBvgxdDewTbwFo6OUtsmyPQKdODti_63P8OPcT1YIl6tLhAMT7TeVoQ"/>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface">Curated by</p>
+<p class="font-label-md text-label-md text-primary">Elena Rostova</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Trip Summary Grid -->
+<section class="px-margin-mobile py-8 border-b border-outline-variant/20">
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary mb-2">calendar_month</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Dates</p>
+<p class="font-label-md text-label-md text-on-surface">Oct 12 - Oct 24</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary mb-2">payments</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Est. Budget</p>
+<p class="font-label-md text-label-md text-on-surface">₹1,24,500</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary mb-2">schedule</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Duration</p>
+<p class="font-label-md text-label-md text-on-surface">12 Days</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary mb-2">group</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Ideal For</p>
+<p class="font-label-md text-label-md text-on-surface">Couples, Solo</p>
+</div>
+</div>
+</section>
+<!-- Route Overview -->
+<section class="px-margin-mobile py-8 border-b border-outline-variant/20">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-6">Route Overview</h2>
+<div class="relative pl-6 before:content-[''] before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-outline-variant/30 flex flex-col gap-6">
+<div class="relative">
+<div class="absolute left-[-29px] top-1 w-[10px] h-[10px] rounded-full bg-primary ring-4 ring-surface-container-lowest"></div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Tokyo</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Days 1 - 4</p>
+</div>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant">Arrival</span>
+</div>
+</div>
+<div class="relative">
+<div class="absolute left-[-29px] top-1 w-[10px] h-[10px] rounded-full bg-outline-variant ring-4 ring-surface-container-lowest"></div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Hakone</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Days 5 - 6</p>
+</div>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant">Train</span>
+</div>
+</div>
+<div class="relative">
+<div class="absolute left-[-29px] top-1 w-[10px] h-[10px] rounded-full bg-outline-variant ring-4 ring-surface-container-lowest"></div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Kyoto</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Days 7 - 10</p>
+</div>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant">Shinkansen</span>
+</div>
+</div>
+<div class="relative">
+<div class="absolute left-[-29px] top-1 w-[10px] h-[10px] rounded-full bg-primary ring-4 ring-surface-container-lowest"></div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Osaka</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Days 11 - 12</p>
+</div>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant">Departure</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Journey Highlights -->
+<section class="px-margin-mobile py-8">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-6">Journey Highlights</h2>
+<div class="flex flex-col gap-6">
+<!-- Highlight Card 1 -->
+<div class="group overflow-hidden rounded-xl bg-surface-container-lowest border border-outline-variant/20 shadow-[0_12px_32px_rgba(26,58,50,0.03)]">
+<div class="h-48 w-full relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A serene view of an ancient wooden temple in Kyoto, surrounded by meticulously raked Zen gravel gardens and vibrant autumn maple trees. The soft morning light casts long, peaceful shadows, highlighting the architectural details and the natural beauty of the setting in a premium, editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhgWE7k_RHLJqLkOiiVdmuOfotjY5NqFDTdep2kFOgPwfqC0cx4qlMVGWVrsHcbQBod3EKthHpLoVh4Z0pS9gAA7302VNWoaLCIm2u8ocX4dTeZYXFMTmi-TD2LEOo-rFAjdXWdhxke-rhGVDHZLefxV2lAP2l0rt2KkT3oUsTCIoiG7GlGbTUxQuFgxAWQFIM5GCcEqf2hFyJ4rzYyCV36Desqek3qSEeRf74jflaGJ6y8UuwZTcilA"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded font-label-sm text-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">photo_camera</span> Must See
+                        </div>
+</div>
+<div class="p-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Kyoto Temple Trail</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Experience the serene beauty of ancient Zen gardens and vibrant autumn colors away from the major crowds.</p>
+</div>
+</div>
+<!-- Highlight Card 2 -->
+<div class="group overflow-hidden rounded-xl bg-surface-container-lowest border border-outline-variant/20 shadow-[0_12px_32px_rgba(26,58,50,0.03)]">
+<div class="h-48 w-full relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A dynamic, slightly blurred shot of a bustling street food market in Osaka at night, illuminated by glowing neon signs and red paper lanterns. Steam rises from a takoyaki stall, and people are seen enjoying the vibrant culinary scene. The image captures the energetic atmosphere with a sophisticated, high-contrast editorial look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYw6sRpBmgMUhjRUc10HVCX48L9twkrlO5Q58yg8x3kfLvEusmxiU-gi_PDzxmjLdqwfLbkfJrtxK-ELhuW0pfByRpjlR48RiY0ukNlN7mOl0X2YN5KG49-VzHSQ-E_SCFDMC5FvokoVlsVvqNimh7GVQiBfgsheXrhPrIiTHg83cHBTj4DUqhAf0OPNBBIiMfCz1gIjlLzTv2mryr8H0UWh6qn4b5oL1B6DAAV8lts3iGaEBG80hB8Q"/>
+</div>
+<div class="p-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Dotonbori Night Market</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Dive into Osaka's vibrant street food scene, sampling takoyaki and okonomiyaki under the neon lights.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom Action -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-md border-t border-outline-variant/20 p-margin-mobile z-40 pb-[max(env(safe-area-inset-bottom),16px)]">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-xl shadow-[0_12px_32px_rgba(2,36,29,0.15)] flex justify-center items-center gap-2 hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined">content_copy</span>
+            Copy this Trip
+        </button>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full py-12 border-t border-outline-variant/20 pb-40"> <!-- Extra padding for sticky FAB -->
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto space-y-4 md:space-y-0 opacity-80 hover:opacity-100 transition-opacity">
+<span class="font-display-lg text-label-md text-primary dark:text-primary-fixed-dim tracking-tight">GlobeTrotter</span>
+<div class="flex flex-wrap justify-center gap-4">
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-secondary transition-colors" href="#">Contact Us</a>
+</div>
+<p class="text-on-surface-variant font-label-sm text-label-sm">© 2024 GlobeTrotter. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

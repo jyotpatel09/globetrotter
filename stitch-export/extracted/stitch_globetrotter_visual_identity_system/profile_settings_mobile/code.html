@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>GlobeTrotter - Profile</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#772f0c",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#ff996e",
+                    "surface-container-low": "#f4f4f2",
+                    "tertiary": "#231f0e",
+                    "error": "#ba1a1a",
+                    "surface": "#faf9f7",
+                    "surface-dim": "#dadad8",
+                    "surface-bright": "#faf9f7",
+                    "tertiary-container": "#393422",
+                    "primary-fixed": "#c7eade",
+                    "inverse-primary": "#abcec2",
+                    "surface-container": "#eeeeec",
+                    "on-surface": "#1a1c1b",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#370e00",
+                    "primary-fixed-dim": "#abcec2",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#cec6ad",
+                    "on-primary-fixed-variant": "#2d4d44",
+                    "inverse-on-surface": "#f1f1ef",
+                    "surface-tint": "#45655b",
+                    "secondary-fixed-dim": "#ffb598",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#1a3a32",
+                    "secondary": "#974723",
+                    "on-background": "#1a1c1b",
+                    "outline": "#717975",
+                    "on-tertiary-fixed": "#1f1c0b",
+                    "on-primary-container": "#82a499",
+                    "on-surface-variant": "#414846",
+                    "on-primary-fixed": "#002019",
+                    "inverse-surface": "#2f3130",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e3e2e1",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e3e2e1",
+                    "secondary-fixed": "#ffdbce",
+                    "on-tertiary-container": "#a49c85",
+                    "background": "#faf9f7",
+                    "on-secondary-fixed-variant": "#79300e",
+                    "surface-container-high": "#e8e8e6",
+                    "primary": "#02241d",
+                    "outline-variant": "#c1c8c4",
+                    "tertiary-fixed": "#ebe2c8",
+                    "on-tertiary-fixed-variant": "#4c4733"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-mobile": "16px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "margin-desktop": "48px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "label-sm": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "label-md": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "body-lg": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "headline-sm": [
+                            "Playfair Display"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Subtle editorial page feel */
+        body {
+            background-color: #faf9f7;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Input focus rings */
+        input:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        
+        /* Hide scrollbar for chips */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md pb-24 min-h-screen flex flex-col md:hidden">
+<!-- Top App Bar (Mobile) -->
+<header class="w-full top-0 sticky z-40 bg-surface border-b border-outline-variant/30 px-margin-mobile py-4 flex justify-between items-center transition-all duration-200 ease-in-out">
+<h1 class="font-display-lg text-headline-sm tracking-tight text-primary">GlobeTrotter</h1>
+<div class="flex items-center gap-4">
+<button class="text-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<main class="flex-1 px-margin-mobile pt-gutter pb-margin-desktop flex flex-col gap-10">
+<!-- Profile Header -->
+<section class="flex flex-col items-center text-center">
+<div class="relative w-24 h-24 rounded-full overflow-hidden mb-4 border border-outline-variant/30 shadow-sm">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="A portrait photograph of a confident traveler standing against a soft, sunlit architectural background. The light mode aesthetic is emphasized by warm, creamy highlights and deep forest green accents. The composition is elegant, modern, and editorial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjN0HaxwIO7D2UoCl-HUZ4vPhBgFH7LkV_A1vRd0nU4bYMEgQjKxmF2Z_Cu2k_s691EeKKYopwOEFy_FxOCYokUDO6o7PRrhyBDoR-GzR6a_L7SQ9JoJqszVQaG-MawAK8m9_CnVCyi7JlQg8rQwxAMtF5lolnFR09-nAlohO9uE3cuK7unxZuTPSyOXKvFMU2vLVHH7Hoz8l3nT-mmq0s07-ewq3uaUUmE8mK98NAsrUpbJiPfjqbVw"/>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-1">Alex Mercer</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">alex.mercer@example.com</p>
+</section>
+<!-- Travel Summary Stats -->
+<section>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Travel Summary</h3>
+<div class="grid grid-cols-2 gap-unit">
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-4 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-secondary mb-2 filled">public</span>
+<span class="font-headline-sm text-headline-sm text-primary">12</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Countries</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-4 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-secondary mb-2 filled">flight_takeoff</span>
+<span class="font-headline-sm text-headline-sm text-primary">8</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Trips</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-4 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-secondary mb-2 filled">explore</span>
+<span class="font-headline-sm text-headline-sm text-primary">34</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Cities</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-4 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-secondary mb-2 filled">star</span>
+<span class="font-headline-sm text-headline-sm text-primary">2.4k</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Photos</span>
+</div>
+</div>
+</section>
+<!-- Personal Information -->
+<section>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Personal Information</h3>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider ml-1">Full Name</label>
+<input class="w-full bg-surface border border-outline-variant/50 rounded-DEFAULT px-4 py-3 font-body-md text-body-md text-on-surface focus:border-primary focus:border-b-2 transition-all" type="text" value="Alex Mercer"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider ml-1">Email Address</label>
+<input class="w-full bg-surface border border-outline-variant/50 rounded-DEFAULT px-4 py-3 font-body-md text-body-md text-on-surface focus:border-primary focus:border-b-2 transition-all" type="email" value="alex.mercer@example.com"/>
+</div>
+<button class="mt-2 w-full py-3 px-4 bg-primary text-on-primary font-label-md text-label-md rounded-DEFAULT hover:opacity-90 transition-opacity">
+                    Save Changes
+                </button>
+</div>
+</section>
+<!-- Travel Preferences -->
+<section>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Travel Preferences</h3>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-primary bg-primary-container text-on-primary-container font-label-sm text-label-sm transition-colors">Culture &amp; History</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant/50 bg-surface text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container transition-colors">Nature &amp; Wildlife</button>
+<button class="px-4 py-2 rounded-full border border-primary bg-primary-container text-on-primary-container font-label-sm text-label-sm transition-colors">Urban Exploration</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant/50 bg-surface text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container transition-colors">Culinary Tours</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant/50 bg-surface text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container transition-colors">Wellness Retreats</button>
+</div>
+</section>
+<!-- Account Actions -->
+<section>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Account</h3>
+<div class="flex flex-col border-t border-outline-variant/20">
+<a class="flex justify-between items-center py-4 border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors px-2" href="#">
+<span class="font-body-md text-body-md text-on-surface">Password &amp; Security</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</a>
+<a class="flex justify-between items-center py-4 border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors px-2" href="#">
+<span class="font-body-md text-body-md text-on-surface">Privacy Settings</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</a>
+<a class="flex justify-between items-center py-4 border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors px-2" href="#">
+<span class="font-body-md text-body-md text-on-surface">Terms of Service</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Log Out -->
+<section class="pt-4 pb-8">
+<button class="w-full py-4 px-4 border border-outline-variant/50 text-error font-label-md text-label-md rounded-DEFAULT hover:bg-error-container hover:border-error transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">logout</span>
+                Log Out
+            </button>
+</section>
+</main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-2 bg-surface border-t border-outline-variant/20 shadow-sm md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high scale-95 active:scale-90 transition-transform py-1 px-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high scale-95 active:scale-90 transition-transform py-1 px-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span class="font-label-sm text-label-sm">My Trips</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high scale-95 active:scale-90 transition-transform py-1 px-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">map</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<!-- Active Tab -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1 filled">person</span>
+<span class="font-label-sm text-label-sm font-bold">Profile</span>
+</a>
+</nav>
+</body></html>
