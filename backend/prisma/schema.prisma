@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  trips     Trip[]
+}
+
+model Trip {
+  id          String   @id @default(uuid())
+  userId      String
+  name        String
+  startDate   DateTime?
+  endDate     DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user        User     @relation(fields: [userId], references: [id])
+  stops       Stop[]
+}
+
+model City {
+  id          String   @id @default(uuid())
+  name        String
+  country     String
+  stops       Stop[]
+  activities  Activity[]
+}
+
+model Stop {
+  id          String   @id @default(uuid())
+  tripId      String
+  cityId      String
+  arrival     DateTime?
+  departure   DateTime?
+
+  trip        Trip     @relation(fields: [tripId], references: [id])
+  city        City     @relation(fields: [cityId], references: [id])
+  activities  TripActivity[]
+}
+
+model Activity {
+  id          String   @id @default(uuid())
+  cityId      String
+  name        String
+  description String?
+  cost        Float?
+
+  city        City     @relation(fields: [cityId], references: [id])
+  tripActivities TripActivity[]
+}
+
+model TripActivity {
+  id          String   @id @default(uuid())
+  stopId      String
+  activityId  String
+  scheduledAt DateTime?
+
+  stop        Stop     @relation(fields: [stopId], references: [id])
+  activity    Activity @relation(fields: [activityId], references: [id])
+}
