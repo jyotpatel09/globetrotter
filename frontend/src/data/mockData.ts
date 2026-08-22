@@ -26,7 +26,7 @@ export const mockCities: City[] = [
     id: 'city-osaka',
     name: 'Osaka',
     country: 'Japan',
-    image: 'https://images.unsplash.com/photo-1571136094091-f3f04bc9c3cf?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=800&q=80',
     description: 'Dynamic street food culture, castles, and electric nightlife.'
   },
   {
@@ -54,7 +54,7 @@ export const mockCities: City[] = [
     id: 'city-ahmedabad',
     name: 'Ahmedabad',
     country: 'India',
-    image: 'https://images.unsplash.com/photo-1600100397608-cf59c34a5a4d?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=800&q=80',
     description: 'UNESCO World Heritage city with intricate stepwells and rich history.'
   },
   {
@@ -96,7 +96,7 @@ export const mockCities: City[] = [
     id: 'city-dubai',
     name: 'Dubai',
     country: 'United Arab Emirates',
-    image: 'https://images.unsplash.com/photo-1546412414-e035b7c77343?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80',
     description: 'Ultra-modern architectures, luxury shopping, and sweeping desert dunes.'
   },
   {
@@ -193,7 +193,7 @@ export const mockActivities: Activity[] = [
     cost: 15,
     category: 'Relax',
     duration: '2 Hours',
-    image: 'https://images.unsplash.com/photo-1610882648335-ced8fc8eefd4?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=800&q=80',
     location: 'Arashiyama, Kyoto',
     bestTime: '08:30 AM'
   },
@@ -245,7 +245,7 @@ export const mockActivities: Activity[] = [
     cost: 30,
     category: 'Food',
     duration: '2 Hours',
-    image: 'https://images.unsplash.com/photo-1571136094091-f3f04bc9c3cf?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=800&q=80',
     location: 'Dotonbori, Osaka',
     bestTime: '07:00 PM'
   },
@@ -259,7 +259,7 @@ export const mockActivities: Activity[] = [
     cost: 0,
     category: 'Culture',
     duration: '2 Hours',
-    image: 'https://images.unsplash.com/photo-1600100397608-cf59c34a5a4d?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=800&q=80',
     location: 'Sabarmati, Ahmedabad',
     bestTime: '09:00 AM'
   },
@@ -311,7 +311,7 @@ export const mockActivities: Activity[] = [
     cost: 18,
     category: 'Relax',
     duration: '1.5 Hours',
-    image: 'https://images.unsplash.com/photo-1499856871958-5b9647a6406a?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80',
     location: 'Port de la Bourdonnais, Paris',
     bestTime: '07:30 PM'
   },
@@ -363,7 +363,7 @@ export const mockActivities: Activity[] = [
     cost: 110,
     category: 'Relax',
     duration: '2 Hours',
-    image: 'https://images.unsplash.com/photo-1546412414-e035b7c77343?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80',
     location: 'Downtown Dubai',
     bestTime: '05:00 PM'
   },

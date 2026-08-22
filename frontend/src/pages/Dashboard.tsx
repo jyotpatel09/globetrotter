@@ -307,7 +307,7 @@ export const Dashboard: React.FC = () => {
             <div className="h-48 relative overflow-hidden">
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1607584144365-c7e6c4e09e1e?auto=format&fit=crop&w=800&q=80')" }}
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=800&q=80')" }}
               ></div>
             </div>
             <div className="p-6">
