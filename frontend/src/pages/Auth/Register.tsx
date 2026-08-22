@@ -25,7 +25,13 @@ export const Register: React.FC = () => {
       setError('Password must be at least 6 characters.');
       return;
     }
+    
     // Simple mock register success
+    localStorage.setItem('globetrotter_user', JSON.stringify({
+      id: `user-${Date.now()}`,
+      name,
+      email
+    }));
     navigate('/dashboard');
   };
 

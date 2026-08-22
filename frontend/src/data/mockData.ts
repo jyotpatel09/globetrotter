@@ -409,7 +409,7 @@ export const initialTrips: Trip[] = [
             stopId: 'stop-goa-1',
             activityId: 'act-baga-beach',
             scheduledAt: '2026-11-21T10:00:00.000Z',
-            activity: mockActivities[13]
+            activity: mockActivities.find(a => a.id === 'act-baga-beach')
           }
         ]
       }
@@ -434,6 +434,72 @@ export const initialTrips: Trip[] = [
           amount: 30,
           category: 'Transport',
           date: '2026-11-21'
+        }
+      ]
+    }
+  },
+  {
+    id: 'trip-ahmedabad-2026',
+    userId: 'user-123',
+    name: 'Ahmedabad Cultural Weekend',
+    startDate: '2026-09-12',
+    endDate: '2026-09-14',
+    createdAt: '2026-08-15T10:00:00.000Z',
+    updatedAt: '2026-08-15T10:00:00.000Z',
+    stops: [
+      {
+        id: 'stop-ahm-1',
+        tripId: 'trip-ahmedabad-2026',
+        cityId: 'city-ahmedabad',
+        arrival: '2026-09-12',
+        departure: '2026-09-14',
+        city: mockCities.find(c => c.id === 'city-ahmedabad'),
+        activities: [
+          {
+            id: 'trip-act-ahm-1',
+            stopId: 'stop-ahm-1',
+            activityId: 'act-sabarmati',
+            scheduledAt: '2026-09-12T10:00:00.000Z',
+            activity: mockActivities.find(a => a.id === 'act-sabarmati')
+          },
+          {
+            id: 'trip-act-ahm-2',
+            stopId: 'stop-ahm-1',
+            activityId: 'act-manek-chowk',
+            scheduledAt: '2026-09-13T20:00:00.000Z',
+            activity: mockActivities.find(a => a.id === 'act-manek-chowk')
+          }
+        ]
+      }
+    ],
+    budget: {
+      id: 'budget-ahmedabad-2026',
+      tripId: 'trip-ahmedabad-2026',
+      totalLimit: 300,
+      expenses: [
+        {
+          id: 'exp-ahm-1',
+          budgetId: 'budget-ahmedabad-2026',
+          title: 'Heritage Haveli Hotel Stay',
+          amount: 150,
+          category: 'Accommodation',
+          date: '2026-09-12'
+        },
+        {
+          id: 'exp-ahm-2',
+          budgetId: 'budget-ahmedabad-2026',
+          title: 'Local Auto Transit',
+          amount: 20,
+          category: 'Transport',
+          date: '2026-09-13'
+        },
+        {
+          id: 'trip-act-ahm-2',
+          budgetId: 'budget-ahmedabad-2026',
+          title: 'Activity: Manek Chowk Street Food',
+          amount: 10,
+          category: 'Food',
+          date: '2026-09-13'
         }
       ]
     }

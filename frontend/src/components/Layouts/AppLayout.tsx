@@ -6,12 +6,20 @@ export const AppLayout: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const currentPath = location.pathname;
-
-  // Paths that do not show the global headers/footers (e.g. login, register, share)
   const isAuthOrShare = ['/login', '/register'].includes(currentPath) || currentPath.startsWith('/share/');
 
+  // Redirect to login if not authenticated (except public shared trip or login/register pages)
+  React.useEffect(() => {
+    if (!isAuthOrShare) {
+      const sessionUser = localStorage.getItem('globetrotter_user');
+      if (!sessionUser) {
+        navigate('/login');
+      }
+    }
+  }, [currentPath, isAuthOrShare, navigate]);
+
   const handleLogout = () => {
-    // Just a mock navigation to login
+    localStorage.removeItem('globetrotter_user');
     navigate('/login');
   };
 

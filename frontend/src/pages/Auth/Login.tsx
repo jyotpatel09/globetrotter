@@ -15,11 +15,24 @@ export const Login: React.FC = () => {
       setError('Please fill in all fields.');
       return;
     }
+    
     // Simple mock authentication
-    if (email.includes('@') && password.length >= 4) {
+    if (email === 'demo@globetrotter.com' && password === 'password') {
+      localStorage.setItem('globetrotter_user', JSON.stringify({
+        id: 'user-123',
+        name: 'Alex Mercer',
+        email: 'demo@globetrotter.com'
+      }));
+      navigate('/dashboard');
+    } else if (email.includes('@') && password.length >= 4) {
+      localStorage.setItem('globetrotter_user', JSON.stringify({
+        id: `user-${Date.now()}`,
+        name: email.split('@')[0].split('.').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' '),
+        email
+      }));
       navigate('/dashboard');
     } else {
-      setError('Invalid email or password. Hint: Use any standard email and 4+ char password.');
+      setError('Invalid credentials. Hint: Use demo@globetrotter.com and password.');
     }
   };
 
