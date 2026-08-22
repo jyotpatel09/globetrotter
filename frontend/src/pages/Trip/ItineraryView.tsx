@@ -8,6 +8,12 @@ export const ItineraryView: React.FC = () => {
   const navigate = useNavigate();
   const [trip, setTrip] = useState<Trip | null>(null);
   const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState<'itinerary' | 'stays' | 'tips'>('itinerary');
+  const [collapsedDays, setCollapsedDays] = useState<Record<string, boolean>>({});
+
+  const toggleDay = (dayLabel: string) => {
+    setCollapsedDays(prev => ({ ...prev, [dayLabel]: !prev[dayLabel] }));
+  };
 
   useEffect(() => {
     const loadTrip = async () => {
@@ -102,12 +108,7 @@ export const ItineraryView: React.FC = () => {
     return days;
   };
 
-  const [activeTab, setActiveTab] = useState<'itinerary' | 'stays' | 'tips'>('itinerary');
-  const [collapsedDays, setCollapsedDays] = useState<Record<string, boolean>>({});
 
-  const toggleDay = (dayLabel: string) => {
-    setCollapsedDays(prev => ({ ...prev, [dayLabel]: !prev[dayLabel] }));
-  };
 
   const timelineDays = generateTimelineDays();
   const coverImage = trip.stops?.[0]?.city?.image || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1600&q=80';
