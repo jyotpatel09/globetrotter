@@ -4,7 +4,11 @@ import { sendSuccess, sendError } from '../utils/response';
 
 export const getTripActivities = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { stopId } = req.params as any;
+    const { id: tripId, stopId } = req.params as any;
+    const userId = req.userId;
+
+    const trip = await prisma.trip.findFirst({ where: { id: tripId, userId } });
+    if (!trip) return sendError(res, 'Trip not found or unauthorized', 404);
 
     const activities = await prisma.tripActivity.findMany({
       where: { stopId },
@@ -20,22 +24,20 @@ export const getTripActivities = async (req: Request, res: Response, next: NextF
 
 export const createTripActivity = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { stopId } = req.params as any;
+    const { id: tripId, stopId } = req.params as any;
+    const userId = req.userId;
     const { activityId, scheduledAt } = req.body;
 
-    if (!activityId) {
-      return sendError(res, 'activityId is required', 400);
-    }
+    if (!activityId) return sendError(res, 'activityId is required', 400);
 
-    const stop = await prisma.stop.findUnique({ where: { id: stopId } });
-    if (!stop) {
-      return sendError(res, 'Stop not found', 404);
-    }
+    const trip = await prisma.trip.findFirst({ where: { id: tripId, userId } });
+    if (!trip) return sendError(res, 'Trip not found or unauthorized', 404);
+
+    const stop = await prisma.stop.findUnique({ where: { id: stopId, tripId } });
+    if (!stop) return sendError(res, 'Stop not found', 404);
 
     const activity = await prisma.activity.findUnique({ where: { id: activityId } });
-    if (!activity) {
-      return sendError(res, 'Activity not found', 404);
-    }
+    if (!activity) return sendError(res, 'Activity not found', 404);
 
     const tripActivity = await prisma.tripActivity.create({
       data: {
@@ -53,8 +55,12 @@ export const createTripActivity = async (req: Request, res: Response, next: Next
 
 export const updateTripActivity = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { stopId, tripActivityId } = req.params as any;
+    const { id: tripId, stopId, tripActivityId } = req.params as any;
+    const userId = req.userId;
     const { scheduledAt } = req.body;
+
+    const trip = await prisma.trip.findFirst({ where: { id: tripId, userId } });
+    if (!trip) return sendError(res, 'Trip not found or unauthorized', 404);
 
     const tripActivity = await prisma.tripActivity.update({
       where: { id: tripActivityId, stopId },
@@ -65,16 +71,18 @@ export const updateTripActivity = async (req: Request, res: Response, next: Next
 
     sendSuccess(res, tripActivity);
   } catch (error) {
-    if ((error as any).code === 'P2025') {
-      return sendError(res, 'TripActivity not found', 404);
-    }
+    if ((error as any).code === 'P2025') return sendError(res, 'TripActivity not found', 404);
     next(error);
   }
 };
 
 export const deleteTripActivity = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { stopId, tripActivityId } = req.params as any;
+    const { id: tripId, stopId, tripActivityId } = req.params as any;
+    const userId = req.userId;
+
+    const trip = await prisma.trip.findFirst({ where: { id: tripId, userId } });
+    if (!trip) return sendError(res, 'Trip not found or unauthorized', 404);
 
     await prisma.tripActivity.delete({
       where: { id: tripActivityId, stopId },
@@ -82,9 +90,7 @@ export const deleteTripActivity = async (req: Request, res: Response, next: Next
 
     sendSuccess(res, null, 204);
   } catch (error) {
-    if ((error as any).code === 'P2025') {
-      return sendError(res, 'TripActivity not found', 404);
-    }
+    if ((error as any).code === 'P2025') return sendError(res, 'TripActivity not found', 404);
     next(error);
   }
 };
