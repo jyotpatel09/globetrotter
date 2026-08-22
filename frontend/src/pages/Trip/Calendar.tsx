@@ -11,14 +11,23 @@ export const Calendar: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!id) return;
-    const tripData = tripService.getTripById(id);
-    if (tripData) {
-      setTrip(tripData);
-    } else {
-      navigate('/dashboard');
-    }
-    setLoading(false);
+    const loadTrip = async () => {
+      if (!id) return;
+      try {
+        const tripData = await tripService.getTripById(id);
+        if (tripData) {
+          setTrip(tripData);
+        } else {
+          navigate('/dashboard');
+        }
+      } catch (err) {
+        console.error('Failed to load trip details for calendar:', err);
+        navigate('/dashboard');
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadTrip();
   }, [id]);
 
   if (loading) {

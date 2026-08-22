@@ -10,16 +10,23 @@ export const SharedTrip: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!token) return;
-    
-    // Extract actual trip ID from the token (e.g., token-tripId)
-    const tripId = token.replace('token-', '');
-    const tripData = tripService.getTripById(tripId);
-    
-    if (tripData) {
-      setTrip(tripData);
-    }
-    setLoading(false);
+    const loadTrip = async () => {
+      if (!token) return;
+      try {
+        // Extract actual trip ID from the token (e.g., token-tripId)
+        const tripId = token.replace('token-', '');
+        const tripData = await tripService.getTripById(tripId);
+        
+        if (tripData) {
+          setTrip(tripData);
+        }
+      } catch (err) {
+        console.error('Failed to load shared trip details:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadTrip();
   }, [token]);
 
   if (loading) {

@@ -39,30 +39,44 @@ export const ActivityDiscovery: React.FC = () => {
 
   // Load trips when modal opens
   useEffect(() => {
-    if (modalOpen) {
-      const userTrips = tripService.getTrips();
-      setTrips(userTrips);
-      if (userTrips.length > 0) {
-        setTargetTripId(userTrips[0].id);
+    const loadTrips = async () => {
+      if (modalOpen) {
+        try {
+          const userTrips = await tripService.getTrips();
+          setTrips(userTrips);
+          if (userTrips.length > 0) {
+            setTargetTripId(userTrips[0].id);
+          }
+        } catch (err) {
+          console.error('Failed to load trips for scheduling:', err);
+        }
       }
-    }
+    };
+    loadTrips();
   }, [modalOpen]);
 
   // Update available stops when selected trip or activity changes
   useEffect(() => {
-    if (targetTripId && selectedActivity) {
-      const trip = tripService.getTripById(targetTripId);
-      if (trip) {
-        // Filter stops that belong to the activity's city
-        const matchingStops = trip.stops.filter(s => s.cityId === selectedActivity.cityId);
-        setAvailableStops(matchingStops);
-        if (matchingStops.length > 0) {
-          setTargetStopId(matchingStops[0].id);
-        } else {
-          setTargetStopId('');
+    const loadTripData = async () => {
+      if (targetTripId && selectedActivity) {
+        try {
+          const trip = await tripService.getTripById(targetTripId);
+          if (trip) {
+            // Filter stops that belong to the activity's city
+            const matchingStops = trip.stops.filter(s => s.cityId === selectedActivity.cityId);
+            setAvailableStops(matchingStops);
+            if (matchingStops.length > 0) {
+              setTargetStopId(matchingStops[0].id);
+            } else {
+              setTargetStopId('');
+            }
+          }
+        } catch (err) {
+          console.error('Failed to load trip stops:', err);
         }
       }
-    }
+    };
+    loadTripData();
   }, [targetTripId, selectedActivity]);
 
   const handleOpenScheduleModal = (activity: Activity) => {
@@ -71,25 +85,30 @@ export const ActivityDiscovery: React.FC = () => {
     setSuccessMessage('');
   };
 
-  const handleScheduleSubmit = (e: React.FormEvent) => {
+  const handleScheduleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedActivity || !targetTripId || !targetStopId) return;
 
-    // Format scheduled timestamp (date + time)
-    const stop = availableStops.find(s => s.id === targetStopId);
-    let schedDate = stop?.arrival || new Date().toISOString().split('T')[0];
-    const timestamp = scheduledTime ? `${schedDate}T${scheduledTime}:00` : schedDate;
+    try {
+      // Format scheduled timestamp (date + time)
+      const stop = availableStops.find(s => s.id === targetStopId);
+      let schedDate = stop?.arrival || new Date().toISOString().split('T')[0];
+      const timestamp = scheduledTime ? `${schedDate}T${scheduledTime}:00` : schedDate;
 
-    tripService.addActivityToStop(targetTripId, targetStopId, selectedActivity.id, timestamp);
-    
-    setSuccessMessage(`Successfully scheduled ${selectedActivity.name}!`);
-    setScheduledTime('');
+      await tripService.addActivityToStop(targetTripId, targetStopId, selectedActivity.id, timestamp);
+      
+      setSuccessMessage(`Successfully scheduled ${selectedActivity.name}!`);
+      setScheduledTime('');
 
-    setTimeout(() => {
-      setModalOpen(false);
-      setSelectedActivity(null);
-      setSuccessMessage('');
-    }, 1500);
+      setTimeout(() => {
+        setModalOpen(false);
+        setSelectedActivity(null);
+        setSuccessMessage('');
+      }, 1500);
+    } catch (err) {
+      console.error('Failed to schedule activity:', err);
+      alert(err instanceof Error ? err.message : 'Failed to schedule activity. Please verify connection and try again.');
+    }
   };
 
   const filteredActivities = activities.filter(activity => {

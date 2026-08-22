@@ -24,55 +24,76 @@ export const Budget: React.FC = () => {
   const [limitEditOpen, setLimitEditOpen] = useState(false);
   const [newLimit, setNewLimit] = useState('');
 
-  const loadTripData = () => {
+  const loadTripData = async () => {
     if (!id) return;
-    const tripData = tripService.getTripById(id);
-    if (tripData) {
-      setTrip(tripData);
-      setNewLimit(tripData.budget?.totalLimit.toString() || '2000');
-    } else {
+    try {
+      const tripData = await tripService.getTripById(id);
+      if (tripData) {
+        setTrip(tripData);
+        setNewLimit(tripData.budget?.totalLimit.toString() || '2000');
+      } else {
+        navigate('/dashboard');
+      }
+    } catch (err) {
+      console.error('Failed to load trip budget details:', err);
       navigate('/dashboard');
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   useEffect(() => {
     loadTripData();
   }, [id]);
 
-  const handleAddExpenseSubmit = (e: React.FormEvent) => {
+  const handleAddExpenseSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!id || !expenseTitle || !expenseAmount) return;
 
     const amount = parseFloat(expenseAmount) || 0;
     const date = expenseDate || new Date().toISOString().split('T')[0];
 
-    tripService.addExpense(id, expenseTitle, amount, expenseCategory, date);
-    
-    // Clear inputs
-    setExpenseTitle('');
-    setExpenseAmount('');
-    setExpenseCategory('Other');
-    setExpenseDate('');
-    setModalOpen(false);
-    loadTripData();
-  };
-
-  const handleDeleteExpense = (expenseId: string) => {
-    if (!id) return;
-    if (window.confirm('Are you sure you want to delete this expense?')) {
-      tripService.deleteExpense(id, expenseId);
-      loadTripData();
+    try {
+      await tripService.addExpense(id, expenseTitle, amount, expenseCategory, date);
+      
+      // Clear inputs
+      setExpenseTitle('');
+      setExpenseAmount('');
+      setExpenseCategory('Other');
+      setExpenseDate('');
+      setModalOpen(false);
+      await loadTripData();
+    } catch (err) {
+      console.error('Failed to add expense:', err);
+      alert('Failed to add expense. Please try again.');
     }
   };
 
-  const handleUpdateLimitSubmit = (e: React.FormEvent) => {
+  const handleDeleteExpense = async (expenseId: string) => {
+    if (!id) return;
+    if (window.confirm('Are you sure you want to delete this expense?')) {
+      try {
+        await tripService.deleteExpense(id, expenseId);
+        await loadTripData();
+      } catch (err) {
+        console.error('Failed to delete expense:', err);
+        alert('Failed to delete expense.');
+      }
+    }
+  };
+
+  const handleUpdateLimitSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!id) return;
     const limit = parseFloat(newLimit) || 0;
-    tripService.updateBudgetLimit(id, limit);
-    setLimitEditOpen(false);
-    loadTripData();
+    try {
+      await tripService.updateBudgetLimit(id, limit);
+      setLimitEditOpen(false);
+      await loadTripData();
+    } catch (err) {
+      console.error('Failed to update limit:', err);
+      alert('Failed to update limit.');
+    }
   };
 
   if (loading) {

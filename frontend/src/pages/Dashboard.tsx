@@ -9,15 +9,21 @@ export const Dashboard: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch upcoming trips
-    const trips = tripService.getTrips();
-    if (trips.length > 0) {
-      // Find the first trip starting today or in future (or simply the first trip)
-      setUpcomingTrip(trips[0]);
-    } else {
-      setUpcomingTrip(null);
-    }
-    setLoading(false);
+    const loadData = async () => {
+      try {
+        const trips = await tripService.getTrips();
+        if (trips.length > 0) {
+          setUpcomingTrip(trips[0]);
+        } else {
+          setUpcomingTrip(null);
+        }
+      } catch (err) {
+        console.error('Failed to load trips for dashboard:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadData();
   }, []);
 
   if (loading) {

@@ -21,11 +21,18 @@ export const CityDiscovery: React.FC = () => {
 
   useEffect(() => {
     setCities(tripService.getCities());
-    const userTrips = tripService.getTrips();
-    setTrips(userTrips);
-    if (userTrips.length > 0) {
-      setTargetTripId(userTrips[0].id);
-    }
+    const loadTrips = async () => {
+      try {
+        const userTrips = await tripService.getTrips();
+        setTrips(userTrips);
+        if (userTrips.length > 0) {
+          setTargetTripId(userTrips[0].id);
+        }
+      } catch (err) {
+        console.error('Failed to load trips for discovery:', err);
+      }
+    };
+    loadTrips();
   }, []);
 
   const handleOpenAddModal = (e: React.MouseEvent, city: City) => {
@@ -35,22 +42,27 @@ export const CityDiscovery: React.FC = () => {
     setSuccessMessage('');
   };
 
-  const handleAddStopSubmit = (e: React.FormEvent) => {
+  const handleAddStopSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedCity || !targetTripId) return;
 
-    tripService.addStop(targetTripId, selectedCity.id, arrivalDate, departureDate);
-    setSuccessMessage(`Successfully added ${selectedCity.name} to your trip!`);
-    
-    // Clear inputs
-    setArrivalDate('');
-    setDepartureDate('');
-    
-    setTimeout(() => {
-      setModalOpen(false);
-      setSelectedCity(null);
-      setSuccessMessage('');
-    }, 1500);
+    try {
+      await tripService.addStop(targetTripId, selectedCity.id, arrivalDate, departureDate);
+      setSuccessMessage(`Successfully added ${selectedCity.name} to your trip!`);
+      
+      // Clear inputs
+      setArrivalDate('');
+      setDepartureDate('');
+      
+      setTimeout(() => {
+        setModalOpen(false);
+        setSelectedCity(null);
+        setSuccessMessage('');
+      }, 1500);
+    } catch (err) {
+      console.error('Failed to add stop to trip:', err);
+      alert(err instanceof Error ? err.message : 'Failed to add stop. Please verify connection and try again.');
+    }
   };
 
   const filteredCities = cities.filter(city => 

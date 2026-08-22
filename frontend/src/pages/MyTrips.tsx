@@ -9,21 +9,33 @@ export const MyTrips: React.FC = () => {
   const [filter, setFilter] = useState<'all' | 'upcoming' | 'past'>('all');
   const [loading, setLoading] = useState(true);
 
-  const fetchTrips = () => {
-    setTrips(tripService.getTrips());
-    setLoading(false);
+  const fetchTrips = async () => {
+    try {
+      const data = await tripService.getTrips();
+      setTrips(data);
+    } catch (err) {
+      console.error('Failed to fetch trips:', err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     fetchTrips();
   }, []);
 
-  const handleDelete = (e: React.MouseEvent, id: string) => {
+  const handleDelete = async (e: React.MouseEvent, id: string) => {
     e.stopPropagation();
     e.preventDefault();
     if (window.confirm('Are you sure you want to delete this trip? All planned activities and expenses will be lost.')) {
-      tripService.deleteTrip(id);
-      fetchTrips();
+      setLoading(true);
+      try {
+        await tripService.deleteTrip(id);
+        await fetchTrips();
+      } catch (err) {
+        console.error('Failed to delete trip:', err);
+        setLoading(false);
+      }
     }
   };
 

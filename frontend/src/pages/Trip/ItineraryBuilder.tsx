@@ -24,16 +24,21 @@ export const ItineraryBuilder: React.FC = () => {
   const [selectedActivity, setSelectedActivity] = useState<Activity | null>(null);
   const [scheduledTime, setScheduledTime] = useState('');
 
-  const loadTripData = () => {
+  const loadTripData = async () => {
     if (!id) return;
-    const tripData = tripService.getTripById(id);
-    if (tripData) {
-      setTrip(tripData);
-      // Select the first stop by default if not set
-      if (tripData.stops.length > 0 && !selectedStopId) {
-        setSelectedStopId(tripData.stops[0].id);
+    try {
+      const tripData = await tripService.getTripById(id);
+      if (tripData) {
+        setTrip(tripData);
+        // Select the first stop by default if not set
+        if (tripData.stops.length > 0 && !selectedStopId) {
+          setSelectedStopId(tripData.stops[0].id);
+        }
+      } else {
+        navigate('/dashboard');
       }
-    } else {
+    } catch (err) {
+      console.error('Failed to load trip builder details:', err);
       navigate('/dashboard');
     }
   };
@@ -55,32 +60,42 @@ export const ItineraryBuilder: React.FC = () => {
     }
   }, [trip, selectedStopId]);
 
-  const handleAddStopSubmit = (e: React.FormEvent) => {
+  const handleAddStopSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!id || !newCityId) return;
 
-    const stop = tripService.addStop(id, newCityId, arrivalDate, departureDate);
-    if (stop) {
-      setSelectedStopId(stop.id);
+    try {
+      const stop = await tripService.addStop(id, newCityId, arrivalDate, departureDate);
+      if (stop) {
+        setSelectedStopId(stop.id);
+      }
+      
+      // Clear inputs
+      setNewCityId('');
+      setArrivalDate('');
+      setDepartureDate('');
+      setStopModalOpen(false);
+      await loadTripData();
+    } catch (err) {
+      console.error('Failed to add stop:', err);
+      alert(err instanceof Error ? err.message : 'Failed to add stop. Please verify connection and try again.');
     }
-    
-    // Clear inputs
-    setNewCityId('');
-    setArrivalDate('');
-    setDepartureDate('');
-    setStopModalOpen(false);
-    loadTripData();
   };
 
-  const handleDeleteStop = (e: React.MouseEvent, stopId: string) => {
+  const handleDeleteStop = async (e: React.MouseEvent, stopId: string) => {
     e.stopPropagation();
     if (!id) return;
     if (window.confirm('Delete this stop? All scheduled activities for this stop will be lost.')) {
-      tripService.deleteStop(id, stopId);
-      if (selectedStopId === stopId) {
-        setSelectedStopId('');
+      try {
+        await tripService.deleteStop(id, stopId);
+        if (selectedStopId === stopId) {
+          setSelectedStopId('');
+        }
+        await loadTripData();
+      } catch (err) {
+        console.error('Failed to delete stop:', err);
+        alert('Failed to delete stop.');
       }
-      loadTripData();
     }
   };
 
@@ -89,27 +104,37 @@ export const ItineraryBuilder: React.FC = () => {
     setActivityModalOpen(true);
   };
 
-  const handleScheduleActivitySubmit = (e: React.FormEvent) => {
+  const handleScheduleActivitySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!id || !selectedStopId || !selectedActivity) return;
 
-    const stop = trip?.stops.find(s => s.id === selectedStopId);
-    let schedDate = stop?.arrival || new Date().toISOString().split('T')[0];
-    const timestamp = scheduledTime ? `${schedDate}T${scheduledTime}:00` : schedDate;
+    try {
+      const stop = trip?.stops.find(s => s.id === selectedStopId);
+      let schedDate = stop?.arrival || new Date().toISOString().split('T')[0];
+      const timestamp = scheduledTime ? `${schedDate}T${scheduledTime}:00` : schedDate;
 
-    tripService.addActivityToStop(id, selectedStopId, selectedActivity.id, timestamp);
-    
-    setScheduledTime('');
-    setActivityModalOpen(false);
-    setSelectedActivity(null);
-    loadTripData();
+      await tripService.addActivityToStop(id, selectedStopId, selectedActivity.id, timestamp);
+      
+      setScheduledTime('');
+      setActivityModalOpen(false);
+      setSelectedActivity(null);
+      await loadTripData();
+    } catch (err) {
+      console.error('Failed to schedule activity:', err);
+      alert(err instanceof Error ? err.message : 'Failed to schedule activity.');
+    }
   };
 
-  const handleDeleteActivity = (stopId: string, tripActId: string) => {
+  const handleDeleteActivity = async (stopId: string, tripActId: string) => {
     if (!id) return;
     if (window.confirm('Remove this activity from your scheduled itinerary?')) {
-      tripService.deleteActivityFromStop(id, stopId, tripActId);
-      loadTripData();
+      try {
+        await tripService.deleteActivityFromStop(id, stopId, tripActId);
+        await loadTripData();
+      } catch (err) {
+        console.error('Failed to delete activity:', err);
+        alert('Failed to remove activity.');
+      }
     }
   };
 

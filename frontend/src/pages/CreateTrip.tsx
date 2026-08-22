@@ -12,7 +12,7 @@ export const CreateTrip: React.FC = () => {
   const [budgetLimit, setBudgetLimit] = useState('2000');
   const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name) {
       setError('Please provide a name for your trip.');
@@ -25,11 +25,16 @@ export const CreateTrip: React.FC = () => {
       return;
     }
 
-    const limit = parseFloat(budgetLimit) || 2000;
-    const newTrip = tripService.createTrip(name, startDate, endDate, limit);
-    
-    // Automatically redirect to the itinerary builder of the new trip!
-    navigate(`/trips/${newTrip.id}/builder`);
+    try {
+      const limit = parseFloat(budgetLimit) || 2000;
+      const newTrip = await tripService.createTrip(name, startDate, endDate, limit);
+      
+      // Automatically redirect to the itinerary builder of the new trip!
+      navigate(`/trips/${newTrip.id}/builder`);
+    } catch (err) {
+      console.error('Failed to create trip:', err);
+      setError(err instanceof Error ? err.message : 'Failed to create trip. Please verify connection and try again.');
+    }
   };
 
   // Calculate duration if dates are selected
