@@ -12,7 +12,7 @@ export const mockCities: City[] = [
     id: 'city-tokyo',
     name: 'Tokyo',
     country: 'Japan',
-    image: 'https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=800&q=80',
     description: 'Neon skylines, futuristic districts, and centuries-old shrines.'
   },
   {
@@ -26,7 +26,7 @@ export const mockCities: City[] = [
     id: 'city-osaka',
     name: 'Osaka',
     country: 'Japan',
-    image: 'https://images.unsplash.com/photo-1590250672723-6a978f8c440a?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1571136094091-f3f04bc9c3cf?auto=format&fit=crop&w=800&q=80',
     description: 'Dynamic street food culture, castles, and electric nightlife.'
   },
   {
@@ -54,105 +54,105 @@ export const mockCities: City[] = [
     id: 'city-ahmedabad',
     name: 'Ahmedabad',
     country: 'India',
-    image: 'https://images.unsplash.com/photo-1607584144365-c7e6c4e09e1e?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1600100397608-cf59c34a5a4d?auto=format&fit=crop&w=800&q=80',
     description: 'UNESCO World Heritage city with intricate stepwells and rich history.'
   },
   {
     id: 'city-mumbai',
     name: 'Mumbai',
     country: 'India',
-    image: 'https://images.unsplash.com/photo-1566552881560-0be862a7c445?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=800&q=80',
     description: 'A high-energy coastal megacity, Bollywood hub, and historical gateway.'
   },
   {
     id: 'city-delhi',
     name: 'Delhi',
     country: 'India',
-    image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
     description: 'Vast capital city containing ancient forts, busy markets, and monuments.'
   },
   {
     id: 'city-jaipur',
     name: 'Jaipur',
     country: 'India',
-    image: 'https://images.unsplash.com/photo-1477584322904-486188540ec2?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80',
     description: 'The Pink City, filled with royal fortresses, observatories, and palaces.'
   },
   {
     id: 'city-goa',
     name: 'Goa',
     country: 'India',
-    image: 'https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
     description: 'Sunkissed beaches, Portuguese churches, and relaxed tropical vibes.'
   },
   {
     id: 'city-bengaluru',
     name: 'Bengaluru',
     country: 'India',
-    image: 'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=800&q=80',
     description: 'India\'s tech hub, renowned for its gardens, palaces, and microbreweries.'
   },
   {
     id: 'city-dubai',
     name: 'Dubai',
     country: 'United Arab Emirates',
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1546412414-e035b7c77343?auto=format&fit=crop&w=800&q=80',
     description: 'Ultra-modern architectures, luxury shopping, and sweeping desert dunes.'
   },
   {
     id: 'city-bali',
     name: 'Bali',
     country: 'Indonesia',
-    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1573790387438-4da905039392?auto=format&fit=crop&w=800&q=80',
     description: 'Forested volcanic mountains, iconic rice paddies, and sandy resort beaches.'
   },
   {
     id: 'city-zermatt',
     name: 'Zermatt',
     country: 'Switzerland',
-    image: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=800&q=80',
     description: 'A car-free ski resort at the base of the iconic Matterhorn peak.'
   },
   {
     id: 'city-bangkok',
     name: 'Bangkok',
     country: 'Thailand',
-    image: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=800&q=80',
     description: 'Bustling streets, ornate shrines, and active boat-filled canals.'
   },
   {
     id: 'city-rome',
     name: 'Rome',
     country: 'Italy',
-    image: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?auto=format&fit=crop&w=800&q=80',
     description: 'Cradle of the Roman Empire, St. Peter\'s Basilica, and fine gelaterias.'
   },
   {
     id: 'city-manali',
     name: 'Manali',
     country: 'India',
-    image: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1542401886-65d6c61db217?auto=format&fit=crop&w=800&q=80',
     description: 'Himalayan backpacking hub, adventure sports, and snow-capped valleys.'
   },
   {
     id: 'city-srinagar',
     name: 'Srinagar',
     country: 'India',
-    image: 'https://images.unsplash.com/photo-1566228015668-4c45dbc4e2f5?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80',
     description: 'Beautiful Mughal gardens, absolute serenity, and wooden houseboats.'
   },
   {
     id: 'city-udaipur',
     name: 'Udaipur',
     country: 'India',
-    image: 'https://images.unsplash.com/photo-1602642953282-35dfcf003e67?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80',
     description: 'City of Lakes, boasting floating palaces, gardens, and royal courtrooms.'
   },
   {
     id: 'city-alleppey',
     name: 'Alleppey',
     country: 'India',
-    image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
     description: 'Network of tranquil backwater canals, palm-fringed houseboats, and coir.'
   },
   {
@@ -219,7 +219,7 @@ export const mockActivities: Activity[] = [
     cost: 20,
     category: 'Active',
     duration: '1.5 Hours',
-    image: 'https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=800&q=80',
     location: 'Shibuya, Tokyo',
     bestTime: '05:30 PM'
   },
@@ -245,7 +245,7 @@ export const mockActivities: Activity[] = [
     cost: 30,
     category: 'Food',
     duration: '2 Hours',
-    image: 'https://images.unsplash.com/photo-1590250672723-6a978f8c440a?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1571136094091-f3f04bc9c3cf?auto=format&fit=crop&w=800&q=80',
     location: 'Dotonbori, Osaka',
     bestTime: '07:00 PM'
   },
@@ -259,7 +259,7 @@ export const mockActivities: Activity[] = [
     cost: 0,
     category: 'Culture',
     duration: '2 Hours',
-    image: 'https://images.unsplash.com/photo-1599824425072-ca49ca6db0a6?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1600100397608-cf59c34a5a4d?auto=format&fit=crop&w=800&q=80',
     location: 'Sabarmati, Ahmedabad',
     bestTime: '09:00 AM'
   },
@@ -285,7 +285,7 @@ export const mockActivities: Activity[] = [
     cost: 25,
     category: 'Active',
     duration: '4 Hours',
-    image: 'https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
     location: 'Baga Beach, North Goa',
     bestTime: '10:30 AM'
   },
@@ -337,7 +337,7 @@ export const mockActivities: Activity[] = [
     cost: 40,
     category: 'Food',
     duration: '2 Hours',
-    image: 'https://images.unsplash.com/photo-1596450514735-111a2fe02935?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1596451190630-186aff535bf2?auto=format&fit=crop&w=800&q=80',
     location: 'Bahnhofstrasse, Zermatt',
     bestTime: '07:00 PM'
   },
@@ -363,7 +363,7 @@ export const mockActivities: Activity[] = [
     cost: 110,
     category: 'Relax',
     duration: '2 Hours',
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1546412414-e035b7c77343?auto=format&fit=crop&w=800&q=80',
     location: 'Downtown Dubai',
     bestTime: '05:00 PM'
   },
@@ -377,7 +377,7 @@ export const mockActivities: Activity[] = [
     cost: 20,
     category: 'Active',
     duration: '2 Hours',
-    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1573790387438-4da905039392?auto=format&fit=crop&w=800&q=80',
     location: 'Ubud Valley, Bali',
     bestTime: '09:00 AM'
   },
@@ -431,7 +431,7 @@ export const mockActivities: Activity[] = [
     cost: 30,
     category: 'Culture',
     duration: '3 Hours',
-    image: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?auto=format&fit=crop&w=800&q=80',
     location: 'Piazza del Colosseo, Rome',
     bestTime: '08:30 AM'
   },
@@ -499,7 +499,7 @@ export const mockActivities: Activity[] = [
     cost: 8,
     category: 'Relax',
     duration: '2 Hours',
-    image: 'https://images.unsplash.com/photo-1566228015668-4c45dbc4e2f5?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80',
     location: 'Dal Lake Gate 1, Srinagar',
     bestTime: '05:30 PM'
   },
@@ -525,7 +525,7 @@ export const mockActivities: Activity[] = [
     cost: 10,
     category: 'Relax',
     duration: '1.5 Hours',
-    image: 'https://images.unsplash.com/photo-1602642953282-35dfcf003e67?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80',
     location: 'Ambrai Ghat, Udaipur',
     bestTime: '05:30 PM'
   },
@@ -539,7 +539,7 @@ export const mockActivities: Activity[] = [
     cost: 15,
     category: 'Relax',
     duration: '4 Hours',
-    image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=800&q=80',
     location: 'Punnamada Jetty, Alleppey',
     bestTime: '12:00 PM'
   }
