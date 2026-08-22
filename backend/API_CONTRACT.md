@@ -128,3 +128,17 @@ Update a scheduled activity.
 Remove a scheduled activity from a stop.
 - **Auth required**: Yes
 - **Response**: `204 No Content`
+
+### \GET /trips/:id/budget\
+Get the aggregated budget for a trip.
+- **Purpose**: Calculates the total cost of all activities scheduled within a trip, along with a per-stop breakdown.
+- **Auth required**: Yes
+- **Response**: \200 OK\, \data\: Object containing \	otal\ and \reakdown\ array. Trips with no activities return total 0.
+- **Error**: \404 Not Found\ (if the trip does not exist)
+
+### \GET /trips/:id/timeline\
+Get the chronological timeline of events for a trip.
+- **Purpose**: Returns an ordered list of events (trip start/end, stop arrivals/departures, and scheduled activities). Only returns items with set dates.
+- **Auth required**: Yes
+- **Response**: \200 OK\, \data\: Object containing \	rip\ summary and \events\ array. Events array is empty if no dates are set on any associated items.
+- **Error**: \404 Not Found\ (if the trip does not exist)

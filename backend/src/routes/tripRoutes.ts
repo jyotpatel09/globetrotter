@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getTrips, createTrip, getTripById, updateTrip, deleteTrip, getTripItinerary } from '../controllers/tripController';
+import { getTrips, createTrip, getTripById, updateTrip, deleteTrip, getTripItinerary, getTripBudget, getTripTimeline } from '../controllers/tripController';
 import stopRoutes from './stopRoutes';
 
 const router = Router();
@@ -8,6 +8,8 @@ router.get('/', getTrips);
 router.post('/', createTrip);
 router.get('/:id', getTripById);
 router.get('/:id/itinerary', getTripItinerary);
+router.get('/:id/budget', getTripBudget);
+router.get('/:id/timeline', getTripTimeline);
 router.patch('/:id', updateTrip);
 router.delete('/:id', deleteTrip);
 
