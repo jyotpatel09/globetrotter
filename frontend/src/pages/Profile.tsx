@@ -42,7 +42,7 @@ export const Profile: React.FC = () => {
           <img
             alt={name}
             className="w-28 h-28 rounded-full object-cover border-2 border-primary/20 shadow-md"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlE3ctjkaiq0H3iKPnicCcCyUzqd0d0VY923spFVUBOG5UqbNF5Vlq-4lQjUDAEbpbK210I8uGxwV8MsJZKscSZIPkMOQCDuy-A-uthjQ2VFVS3MAc-2iSeDRs9QlFWKjJGoT7MO6f7_VteU6mpMUZyCGFjxJdhhkWwdRAuDvUSk5jkM-UlyBZucYPzktyQ2_tdajxGGtkqoTNFc0naof9B7UbT8zLNAeDnm5tCXwtvJG0lOObWsFRvg"
+            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80"
           />
           <div className="text-center">
             <h4 className="font-headline-sm text-[18px] font-bold text-primary">{name}</h4>

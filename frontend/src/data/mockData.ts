@@ -19,7 +19,7 @@ export const mockCities: City[] = [
     id: 'city-kyoto',
     name: 'Kyoto',
     country: 'Japan',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD1BafMDLt2TQNtdGYqn8TV9sOcyTWigwaNiAeDFBspjy_fY4v7yb49ciA8Yhqgg7q0dkSkkDp8ZZlVixL7IV9nwS3Er4UV-bB3qBDFFLn4PJaeIpJ42rHiTzYLcVy9awfbFpJBITGeydS5Z7lRcZZIlhUyL8944w_ftRIDpVe2ByXn60UcSHFyvuxQMjo2kRNvU-9pZGvjqpJeSle_GntpcnKuWhP_KLvhc_4UgmOQ0ykutVZRF8CclQ',
+    image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=800&q=80',
     description: 'Ancient wooden temples, bamboo forests, and traditional teahouses.'
   },
   {
@@ -154,6 +154,20 @@ export const mockCities: City[] = [
     country: 'India',
     image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=800&q=80',
     description: 'Network of tranquil backwater canals, palm-fringed houseboats, and coir.'
+  },
+  {
+    id: 'city-istanbul',
+    name: 'Istanbul',
+    country: 'Turkey',
+    image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=800&q=80',
+    description: 'Straddling two continents, a city of grand mosques, bazaars, and Bosphorus views.'
+  },
+  {
+    id: 'city-barcelona',
+    name: 'Barcelona',
+    country: 'Spain',
+    image: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=800&q=80',
+    description: 'Gaudí masterpieces, sun-soaked beaches, and electric tapas culture.'
   }
 ];
 
@@ -167,7 +181,7 @@ export const mockActivities: Activity[] = [
     cost: 0,
     category: 'Active',
     duration: '3 Hours',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBNXjww8QPYsLPkZal8UjnHmkN-Ey0_pbOdb9eBIgE7RTd8J9--AWyI4h9XnGJxDBXgY_YkcZ_k1VN0Tv1PA0vDCbw-4vFFgq_bgxZa1UcQzlGjiyfAmzHnAS-JNZuxCE8w553s9cXAOTq2AB52Y9z2VHflryWlWif7K8PlFlbHvzT-ee-UVySSB96X5IcPOKeADoS702JYjyocbMKDi_waB3r5kZKo6Gioga3i0GgRaPgRzTvsQMUkUw',
+    image: 'https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?auto=format&fit=crop&w=800&q=80',
     location: 'Kyoto, Japan',
     bestTime: '07:00 AM'
   },
@@ -179,7 +193,7 @@ export const mockActivities: Activity[] = [
     cost: 15,
     category: 'Relax',
     duration: '2 Hours',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBRI2GfRd-lpYleVvGBlrVNqpB5d3r5pemMTGL1xOqVBnDUXAH6OMrWCsjUqPk75baw71XKSL9SsJg5ruG1CjfBYgknNLjKquNIO43yBa6B3cR1WFLTXqJuY-FJScR46JthbwDTKPbNBGgKUu0pUWKdP_nNaCwe14kf5im5TiOLwArPg0bUeRBLsSntw2SIL34xQSBWKypbILDQrUx9pSS9Bj4D8ZN1vVL4f1TlorhCjA79UIPgE6-t1Q',
+    image: 'https://images.unsplash.com/photo-1610882648335-ced8fc8eefd4?auto=format&fit=crop&w=800&q=80',
     location: 'Arashiyama, Kyoto',
     bestTime: '08:30 AM'
   },
@@ -191,7 +205,7 @@ export const mockActivities: Activity[] = [
     cost: 45,
     category: 'Culture',
     duration: '1.5 Hours',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDsgy7PWfi6h4kEICCy3IyJM2czn3SVHbxx3pldAL0Xt7Av3wBHX7-8pOA0VhVFrdrn-TDa254gCEr9sJKg6IrWleUDkPBfxoZuhzF7ZKNZaZx0uzOr9f4A0Dg4CXkcgtkTi6IisL_Pt21hd1IxJX5bfr-tvHyj4vGPTI0XcJYSMdvkBxSSAI11qabgfh50_-QN_TyiRXbc8z5FpX4iJtfU8RtUcVkP4ruKF4bowW6lMDuscys8O3S0Aw',
+    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80',
     location: 'Higashiyama, Kyoto',
     bestTime: '02:00 PM'
   },
