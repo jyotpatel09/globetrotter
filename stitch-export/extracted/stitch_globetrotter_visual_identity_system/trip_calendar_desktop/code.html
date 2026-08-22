@@ -1,0 +1,395 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GlobeTrotter - Trip Calendar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e3e2e1",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "background": "#faf9f7",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#1f1c0b",
+                    "on-tertiary-container": "#a49c85",
+                    "tertiary-container": "#393422",
+                    "surface-bright": "#faf9f7",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#1a3a32",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#abcec2",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#45655b",
+                    "on-primary-fixed": "#002019",
+                    "inverse-surface": "#2f3130",
+                    "primary-fixed-dim": "#abcec2",
+                    "on-surface-variant": "#414846",
+                    "surface-container-highest": "#e3e2e1",
+                    "tertiary-fixed": "#ebe2c8",
+                    "on-surface": "#1a1c1b",
+                    "surface-dim": "#dadad8",
+                    "outline": "#717975",
+                    "primary-fixed": "#c7eade",
+                    "on-background": "#1a1c1b",
+                    "secondary": "#974723",
+                    "surface-container": "#eeeeec",
+                    "surface-container-low": "#f4f4f2",
+                    "surface": "#faf9f7",
+                    "surface-container-high": "#e8e8e6",
+                    "primary": "#02241d",
+                    "on-secondary-fixed-variant": "#79300e",
+                    "secondary-container": "#ff996e",
+                    "secondary-fixed-dim": "#ffb598",
+                    "tertiary-fixed-dim": "#cec6ad",
+                    "on-secondary-fixed": "#370e00",
+                    "on-tertiary-fixed-variant": "#4c4733",
+                    "on-secondary-container": "#772f0c",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#2d4d44",
+                    "secondary-fixed": "#ffdbce",
+                    "outline-variant": "#c1c8c4",
+                    "on-primary-container": "#82a499",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#231f0e",
+                    "inverse-on-surface": "#f1f1ef"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "48px",
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "label-md": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "headline-sm": [
+                            "Playfair Display"
+                    ],
+                    "label-sm": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "body-lg": [
+                            "Plus Jakarta Sans"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="flex bg-background h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col gap-4 p-6 h-full w-64 fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant/30 z-20">
+<div class="mb-8">
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">GlobeTrotter</h1>
+
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-high transition-colors rounded-full font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-high transition-colors rounded-full font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+                My Trips
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-high transition-colors rounded-full font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+                Discover
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-high transition-colors rounded-full font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+                Profile
+            </a>
+</div>
+<button class="mt-auto bg-primary text-on-primary rounded-full py-3 px-6 font-label-md text-label-md w-full hover:opacity-90 transition-opacity">
+            Plan New Trip
+        </button>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 flex flex-col h-full overflow-hidden">
+<!-- Header & Hero Area -->
+<header class="relative h-64 shrink-0 border-b border-outline-variant/20">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A serene autumn landscape in Japan featuring a traditional wooden temple surrounded by vibrant red and orange maple trees. A calm pond reflects the scenery, and gentle morning mist rolls over distant rolling hills. The lighting is soft, warm, and natural, creating a tranquil, sophisticated, and premium editorial travel aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXn--K6iXAsm_cLNNq6NrP6TTw45Og0hY1zmBF3ghnybezKirTp0g_-1CpNdo116lsZVqF2eyacxK_YsGP2yZcCasyy1ECHQfuJ5ynakFqPBfouJQ29d-tGS5OjASBWE0edjNhvAa65wXM-1OXX3zJS_xbqIgUEZ-p0WxVcMbHaPM8uJZK8p8yOxw8Lz7aGCmuochdgHbyDoS9KO-GU-nll5wxBJ_nnu9tTE0XgVi7-ShrQ1LyOK_1ng')">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative h-full flex flex-col justify-end px-margin-desktop pb-8 max-w-container-max mx-auto w-full">
+<div class="flex justify-between items-end">
+<div>
+<p class="font-label-md text-label-md text-secondary tracking-widest uppercase mb-2">Oct 12 – Oct 24 • 13 Days</p>
+<h1 class="font-display-lg text-display-lg text-primary">Japan: Autumn Discovery</h1>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center bg-surface hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-primary">share</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center bg-surface hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-primary">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Inner Navigation -->
+<div class="border-b border-outline-variant/20 bg-surface shrink-0">
+<div class="px-margin-desktop max-w-container-max mx-auto flex gap-8">
+<a class="py-4 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors border-b-2 border-transparent" href="#">Overview</a>
+<a class="py-4 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors border-b-2 border-transparent" href="#">Itinerary</a>
+<a class="py-4 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors border-b-2 border-transparent" href="#">Budget</a>
+<a class="py-4 font-label-md text-label-md text-primary border-b-2 border-primary" href="#">Calendar</a>
+</div>
+</div>
+<!-- Calendar Area -->
+<div class="flex-1 overflow-auto p-margin-desktop">
+<div class="max-w-container-max mx-auto flex gap-8 h-full">
+<!-- Calendar Grid -->
+<div class="flex-1">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-sm text-headline-sm text-primary">October 2024</h2>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant rounded-full text-primary hover:bg-surface-variant"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-2 border border-outline-variant rounded-full text-primary hover:bg-surface-variant"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-px bg-outline-variant/20 rounded-xl overflow-hidden border border-outline-variant/20 shadow-sm">
+<!-- Days Header -->
+<div class="bg-surface p-3 text-center font-label-sm text-label-sm text-on-surface-variant uppercase">Sun</div>
+<div class="bg-surface p-3 text-center font-label-sm text-label-sm text-on-surface-variant uppercase">Mon</div>
+<div class="bg-surface p-3 text-center font-label-sm text-label-sm text-on-surface-variant uppercase">Tue</div>
+<div class="bg-surface p-3 text-center font-label-sm text-label-sm text-on-surface-variant uppercase">Wed</div>
+<div class="bg-surface p-3 text-center font-label-sm text-label-sm text-on-surface-variant uppercase">Thu</div>
+<div class="bg-surface p-3 text-center font-label-sm text-label-sm text-on-surface-variant uppercase">Fri</div>
+<div class="bg-surface p-3 text-center font-label-sm text-label-sm text-on-surface-variant uppercase">Sat</div>
+<!-- Row 1 -->
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface-variant/40"><span class="font-label-md text-label-md">29</span></div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface-variant/40"><span class="font-label-md text-label-md">30</span></div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface-variant/40"><span class="font-label-md text-label-md">1</span></div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface-variant/40"><span class="font-label-md text-label-md">2</span></div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface-variant/40"><span class="font-label-md text-label-md">3</span></div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface-variant/40"><span class="font-label-md text-label-md">4</span></div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface-variant/40"><span class="font-label-md text-label-md">5</span></div>
+<!-- Row 2 -->
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface-variant/40"><span class="font-label-md text-label-md">6</span></div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface-variant/40"><span class="font-label-md text-label-md">7</span></div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface-variant/40"><span class="font-label-md text-label-md">8</span></div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface-variant/40"><span class="font-label-md text-label-md">9</span></div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface-variant/40"><span class="font-label-md text-label-md">10</span></div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface-variant/40"><span class="font-label-md text-label-md">11</span></div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface"><span class="font-label-md text-label-md">12</span>
+<div class="mt-1 bg-surface-variant rounded px-2 py-1 border-l-2 border-primary">
+<p class="font-label-sm text-label-sm text-primary truncate">Arrival</p>
+</div>
+</div>
+<!-- Row 3 (Trip Starts) -->
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface">
+<span class="font-label-md text-label-md">13</span>
+<div class="mt-1 bg-surface-variant rounded px-2 py-1 border-l-2 border-primary">
+<p class="font-label-sm text-label-sm text-primary font-bold truncate">Tokyo</p>
+<p class="text-[10px] text-on-surface-variant truncate">3 activities</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface">
+<span class="font-label-md text-label-md">14</span>
+<div class="mt-1 bg-surface-variant rounded px-2 py-1 border-l-2 border-primary">
+<p class="font-label-sm text-label-sm text-primary font-bold truncate">Tokyo</p>
+<p class="text-[10px] text-on-surface-variant truncate">Meiji Shrine +2</p>
+</div>
+</div>
+<!-- Travel Day -->
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface">
+<span class="font-label-md text-label-md">15</span>
+<div class="mt-1 bg-surface-variant rounded px-2 py-1 border-l-2 border-secondary flex flex-col gap-1">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[14px]">train</span>
+<p class="font-label-sm text-label-sm truncate">To Kyoto (2.5h)</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface">
+<span class="font-label-md text-label-md">16</span>
+<div class="mt-1 bg-surface-variant rounded px-2 py-1 border-l-2 border-secondary">
+<p class="font-label-sm text-label-sm text-secondary font-bold truncate">Kyoto</p>
+<p class="text-[10px] text-on-surface-variant truncate">Arashiyama +1</p>
+</div>
+</div>
+<!-- Selected Day -->
+<div class="bg-primary-fixed/20 h-32 p-2 border-t border-primary/50 text-on-surface shadow-inner relative">
+<span class="font-label-md text-label-md font-bold text-primary">17</span>
+<div class="mt-1 bg-surface rounded px-2 py-1 border-l-2 border-secondary shadow-sm">
+<p class="font-label-sm text-label-sm text-secondary font-bold truncate">Kyoto</p>
+<p class="text-[10px] text-on-surface-variant truncate">Fushimi Inari +3</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface">
+<span class="font-label-md text-label-md">18</span>
+<div class="mt-1 bg-surface-variant rounded px-2 py-1 border-l-2 border-secondary">
+<p class="font-label-sm text-label-sm text-secondary font-bold truncate">Kyoto</p>
+<p class="text-[10px] text-on-surface-variant truncate">Nara Day Trip</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest h-32 p-2 border-t border-outline-variant/10 text-on-surface">
+<span class="font-label-md text-label-md">19</span>
+<div class="mt-1 bg-surface-variant rounded px-2 py-1 border-l-2 border-secondary">
+<p class="font-label-sm text-label-sm text-secondary font-bold truncate">Kyoto</p>
+<p class="text-[10px] text-on-surface-variant truncate">Free Day</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Panel (Selected Day) -->
+<aside class="w-80 bg-surface rounded-xl border border-outline-variant/20 shadow-sm flex flex-col h-full overflow-hidden shrink-0">
+<div class="h-48 bg-cover bg-center shrink-0" data-alt="A close up view of the iconic bright orange Torii gates at Fushimi Inari shrine in Kyoto, Japan. Sunlight filters through the dense forest canopy, casting dramatic shadows on the path. The scene is lush, vibrant, and steeped in cultural heritage, conveying a premium travel editorial look." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB05pM4EkVluFvILUh5lYHMWt1KXfaYOoxP8hcvXDhuY0prnvBfC_PVniYCR4TNrHWQ7U2QMcP7WxHh1u_WpFhh3TaZLbIA00PT-oiKo9mvq52VNS8k8i8oET7K6eWjJfzUiomYEv6wh6RPZxoQrZoLs2UM73qXCfotQHRDdzqA8JAEVSYDOiRVa9y5rXbVgZkjmxkwh68XgBy29xd6bBpDfax8ZHbeYD5mLx5mf257HqpfUxlf6uJc7Q')"></div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Oct 17</h3>
+<p class="font-label-md text-label-md text-secondary">Kyoto</p>
+</div>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-1 rounded font-label-sm text-label-sm">Day 6</span>
+</div>
+<div class="space-y-4 mb-6">
+<div class="flex justify-between items-center pb-2 border-b border-outline-variant/20">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">local_activity</span>
+<span class="font-label-sm text-label-sm">Activities</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">4 planned</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b border-outline-variant/20">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-label-sm text-label-sm">Duration</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">7h total</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b border-outline-variant/20">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span class="font-label-sm text-label-sm">Est. Cost</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">¥5,500</span>
+</div>
+</div>
+<div class="mt-auto">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 rounded-full hover:opacity-90 transition-opacity">
+                                View Day Details
+                            </button>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+
+
+</body></html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GlobeTrotter - Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#772f0c",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#ff996e",
+                        "surface-container-low": "#f4f4f2",
+                        "tertiary": "#231f0e",
+                        "error": "#ba1a1a",
+                        "surface": "#faf9f7",
+                        "surface-dim": "#dadad8",
+                        "surface-bright": "#faf9f7",
+                        "tertiary-container": "#393422",
+                        "primary-fixed": "#c7eade",
+                        "inverse-primary": "#abcec2",
+                        "surface-container": "#eeeeec",
+                        "on-surface": "#1a1c1b",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#370e00",
+                        "primary-fixed-dim": "#abcec2",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#cec6ad",
+                        "on-primary-fixed-variant": "#2d4d44",
+                        "inverse-on-surface": "#f1f1ef",
+                        "surface-tint": "#45655b",
+                        "secondary-fixed-dim": "#ffb598",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#1a3a32",
+                        "secondary": "#974723",
+                        "on-background": "#1a1c1b",
+                        "outline": "#717975",
+                        "on-tertiary-fixed": "#1f1c0b",
+                        "on-primary-container": "#82a499",
+                        "on-surface-variant": "#414846",
+                        "on-primary-fixed": "#002019",
+                        "inverse-surface": "#2f3130",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e3e2e1",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e3e2e1",
+                        "secondary-fixed": "#ffdbce",
+                        "on-tertiary-container": "#a49c85",
+                        "background": "#faf9f7",
+                        "on-secondary-fixed-variant": "#79300e",
+                        "surface-container-high": "#e8e8e6",
+                        "primary": "#02241d",
+                        "outline-variant": "#c1c8c4",
+                        "tertiary-fixed": "#ebe2c8",
+                        "on-tertiary-fixed-variant": "#4c4733"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .editorial-rule {
+            border-bottom: 1px solid rgba(18, 18, 18, 0.08);
+        }
+        .soft-outline {
+            border: 1px solid rgba(18, 18, 18, 0.08);
+        }
+        .ambient-shadow:hover {
+            box-shadow: 0 12px 32px rgba(26, 58, 50, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container flex flex-col lg:flex-row">
+<!-- TopAppBar (Mobile) -->
+<header class="w-full top-0 sticky border-b border-outline-variant/30 flex justify-between items-center px-margin-mobile py-4 max-w-container-max mx-auto bg-surface lg:hidden z-40">
+<div class="font-display-lg text-headline-sm tracking-tight text-primary">GlobeTrotter</div>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity cursor-pointer">settings</span>
+<img alt="User profile avatar" class="w-8 h-8 rounded-full object-cover soft-outline" data-alt="A subtle, high-quality close-up portrait of a thoughtful young man in soft natural lighting, set against a clean, minimalist off-white background, wearing a simple textured linen shirt. The aesthetic is editorial, crisp, and sophisticated, reflecting a modern travel journal style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlE3ctjkaiq0H3iKPnicCcCyUzqd0d0VY923spFVUBOG5UqbNF5Vlq-4lQjUDAEbpbK210I8uGxwV8MsJZKscSZIPkMOQCDuy-A-uthjQ2VFVS3MAc-2iSeDRs9QlFWKjJGoT7MO6f7_VteU6mpMUZyCGFjxJdhhkWwdRAuDvUSk5jkM-UlyBZucYPzktyQ2_tdajxGGtkqoTNFc0naof9B7UbT8zLNAeDnm5tCXwtvJG0lOObWsFRvg"/>
+</div>
+</header>
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden lg:flex flex-col h-screen w-64 fixed left-0 top-0 p-unit border-r border-outline-variant/30 bg-surface z-40">
+<div class="px-4 py-6 mb-8">
+<div class="font-display-lg text-headline-sm text-primary mb-12">GlobeTrotter</div>
+<div class="flex items-center gap-4 mb-8">
+<img alt="User avatar" class="w-12 h-12 rounded-full object-cover soft-outline" data-alt="A subtle, high-quality close-up portrait of a thoughtful young man in soft natural lighting, set against a clean, minimalist off-white background, wearing a simple textured linen shirt. The aesthetic is editorial, crisp, and sophisticated, reflecting a modern travel journal style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXeRXRg8VCt70mL1uSG-THV7ZSIe2Ct8RAHBz8O0dFoNshV7PSuHtpmXTBmQvYa3ynYKgalE97X1VqDFqnlxu6xH-Ell60zmMSpsp478zRWyt7KPCDSRHGEYygwISHEVYANbs7JxhwWo6XlZ4N7i5oMWV5cYL7MP_5vefh8skRN_nhBxoU8Q5R91_73W4i6-QUdu0CtGkytK_YgwpWrWrFVHKpQZQxHkLUWzHgo7RIcRPjTZuUN_JSWg"/>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Alex Mercer</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Explorer Gold Status</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg hover:opacity-90 transition-opacity mb-8 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span> Plan New Trip
+            </button>
+</div>
+<ul class="flex flex-col gap-2 px-2 flex-grow">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-colors rounded-lg font-body-md text-body-md transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-colors rounded-lg font-body-md text-body-md transition-all duration-200" href="#">
+<span class="material-symbols-outlined">flight_takeoff</span>
+                    My Trips
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-colors rounded-lg font-body-md text-body-md transition-all duration-200" href="#">
+<span class="material-symbols-outlined">public</span>
+                    Discover
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold bg-secondary-fixed/20 rounded-lg font-body-md text-body-md transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+                    Profile
+                </a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 lg:ml-64 w-full max-w-[1024px] mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-24 pb-32 lg:pb-24">
+<!-- Profile Header -->
+<section class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-20">
+<div class="flex items-center gap-6">
+<div class="relative">
+<img alt="Alex Mercer" class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover soft-outline" data-alt="A subtle, high-quality close-up portrait of a thoughtful young man in soft natural lighting, set against a clean, minimalist off-white background, wearing a simple textured linen shirt. The aesthetic is editorial, crisp, and sophisticated, reflecting a modern travel journal style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjXXvN_k04VhItVa7pvQVijmRJMnvtwXo2aDsWlF8q2iG7UK10ilFRzvieUVAKCSe0RS9CO2vD732ht9Z3U4YbYI1xi27Sg2p6P47drPPFwoY7YecU0Krc8dzmaDZIxCDMELVkQxao6fTLer2z5bBhcTHpVIDiTVOy5-vqdo_KUvFa3-_HsdeENiRBfW0WoILDuAyfywGTCdbrKQKvFiBJr1mWRkvV32sfvft0YVK12dNSyfDFpPxZnw"/>
+<button aria-label="Edit avatar" class="absolute bottom-0 right-0 bg-surface rounded-full p-2 soft-outline hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-primary text-[20px]">edit</span>
+</button>
+</div>
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Alex Mercer</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">alex.mercer@example.com</p>
+</div>
+</div>
+<button class="px-6 py-3 border border-primary text-primary font-label-md text-label-md rounded-lg hover:bg-primary/5 transition-colors whitespace-nowrap">
+                Edit Profile
+            </button>
+</section>
+<!-- Travel Summary -->
+<section class="grid grid-cols-3 gap-4 md:gap-8 mb-24 editorial-rule pb-12">
+<div class="text-center md:text-left">
+<div class="font-headline-md text-headline-md text-primary mb-1">12</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Trips Planned</div>
+</div>
+<div class="text-center md:text-left border-l border-r border-outline-variant/30 px-4 md:px-8">
+<div class="font-headline-md text-headline-md text-primary mb-1">24</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Destinations</div>
+</div>
+<div class="text-center md:text-left px-4 md:px-8">
+<div class="font-headline-md text-headline-md text-primary mb-1">8</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Countries</div>
+</div>
+</section>
+<!-- Form Sections -->
+<div class="space-y-20">
+<!-- Personal Information -->
+<section>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-8">Personal Information</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">First Name</label>
+<input class="w-full bg-surface soft-outline rounded-lg px-4 py-3 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary focus:border-t-0 focus:border-l-0 focus:border-r-0 transition-all rounded-b-none" type="text" value="Alex"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Last Name</label>
+<input class="w-full bg-surface soft-outline rounded-lg px-4 py-3 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary focus:border-t-0 focus:border-l-0 focus:border-r-0 transition-all rounded-b-none" type="text" value="Mercer"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Email</label>
+<input class="w-full bg-surface soft-outline rounded-lg px-4 py-3 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary focus:border-t-0 focus:border-l-0 focus:border-r-0 transition-all rounded-b-none" type="email" value="alex.mercer@example.com"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Phone</label>
+<input class="w-full bg-surface soft-outline rounded-lg px-4 py-3 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary focus:border-t-0 focus:border-l-0 focus:border-r-0 transition-all rounded-b-none" type="tel" value="+1 (555) 123-4567"/>
+</div>
+<div class="flex flex-col gap-2 md:col-span-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Country</label>
+<select class="w-full bg-surface soft-outline rounded-lg px-4 py-3 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary focus:border-t-0 focus:border-l-0 focus:border-r-0 transition-all rounded-b-none appearance-none">
+<option>United States</option>
+<option>United Kingdom</option>
+<option>Canada</option>
+<option>Australia</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Travel Preferences -->
+<section class="editorial-rule pb-20">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-8">Travel Style</h2>
+<div class="flex flex-wrap gap-3">
+<button class="px-5 py-2 rounded-full border border-primary bg-primary text-on-primary font-label-sm text-label-sm transition-colors cursor-pointer">Adventure</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant text-on-surface hover:border-primary transition-colors cursor-pointer font-label-sm text-label-sm">Culture</button>
+<button class="px-5 py-2 rounded-full border border-primary bg-primary text-on-primary font-label-sm text-label-sm transition-colors cursor-pointer">Food</button>
+<button class="px-5 py-2 rounded-full border border-primary bg-primary text-on-primary font-label-sm text-label-sm transition-colors cursor-pointer">Nature</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant text-on-surface hover:border-primary transition-colors cursor-pointer font-label-sm text-label-sm">Relaxing</button>
+</div>
+</section>
+<!-- Account Settings -->
+<section>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-6">Account Settings</h2>
+<div class="flex flex-col">
+<a class="flex items-center justify-between py-6 editorial-rule group" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">lock</span>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Change Password</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</a>
+<a class="flex items-center justify-between py-6 editorial-rule group" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">notifications_active</span>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Notification Preferences</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</a>
+<a class="flex items-center justify-between py-6 editorial-rule group" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">security</span>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Privacy &amp; Security</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Danger Zone -->
+<section class="pt-12 mt-12 border-t border-error/20">
+<h2 class="font-headline-sm text-headline-sm text-error mb-6">Danger Zone</h2>
+<div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+<button class="px-6 py-3 border border-outline-variant text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container-high transition-colors">
+                        Log Out
+                    </button>
+<button class="px-6 py-3 text-error font-label-md text-label-md hover:underline transition-all">
+                        Delete Account
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-2 md:hidden bg-surface border-t border-outline-variant/20 shadow-sm scale-95 active:scale-90 transition-transform">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high p-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high p-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span class="font-label-sm text-label-sm">My Trips</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high p-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">map</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>
