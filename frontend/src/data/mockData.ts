@@ -19,7 +19,7 @@ export const mockCities: City[] = [
     id: 'city-kyoto',
     name: 'Kyoto',
     country: 'Japan',
-    image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80',
     description: 'Ancient wooden temples, bamboo forests, and traditional teahouses.'
   },
   {
@@ -193,7 +193,7 @@ export const mockActivities: Activity[] = [
     cost: 15,
     category: 'Relax',
     duration: '2 Hours',
-    image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80',
     location: 'Arashiyama, Kyoto',
     bestTime: '08:30 AM'
   },

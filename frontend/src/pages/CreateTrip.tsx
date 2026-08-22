@@ -159,7 +159,7 @@ export const CreateTrip: React.FC = () => {
           <img
             className="absolute inset-0 w-full h-full object-cover"
             alt="Contemplative Zen Garden"
-            src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=800&q=80"
+            src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
           
