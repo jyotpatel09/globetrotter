@@ -139,32 +139,32 @@ export const Budget: React.FC = () => {
         </div>
 
         <nav className="flex flex-wrap gap-2">
-          <Link to={`/trips/${trip.id}/builder`} className="px-4 py-2 bg-white border border-deep-forest/10 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors">
+          <Link to={`/trips/${trip.id}/builder`} className="px-4 py-2 bg-white border border-outline-variant/30 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors">
             Builder
           </Link>
-          <Link to={`/trips/${trip.id}/itinerary`} className="px-4 py-2 bg-white border border-deep-forest/10 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors">
+          <Link to={`/trips/${trip.id}/itinerary`} className="px-4 py-2 bg-white border border-outline-variant/30 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors">
             Itinerary
           </Link>
           <Link to={`/trips/${trip.id}/budget`} className="px-4 py-2 bg-primary text-on-primary rounded-full font-label-sm text-[12px] uppercase tracking-wide">
             Budget
           </Link>
-          <Link to={`/trips/${trip.id}/calendar`} className="px-4 py-2 bg-white border border-deep-forest/10 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors">
+          <Link to={`/trips/${trip.id}/calendar`} className="px-4 py-2 bg-white border border-outline-variant/30 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors">
             Calendar
           </Link>
-          <Link to={`/share/token-${trip.id}`} className="px-4 py-2 bg-white border border-deep-forest/10 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors flex items-center gap-1.5">
+          <Link to={`/share/token-${trip.id}`} className="px-4 py-2 bg-white border border-outline-variant/30 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors flex items-center gap-1.5">
             <span className="material-symbols-outlined text-[16px]">share</span> Share
           </Link>
         </nav>
       </div>
 
       {/* Overview Dashboard Card */}
-      <section className="bg-white border border-deep-forest/5 p-8 rounded-3xl shadow-md space-y-6">
+      <section className="bg-white border border-outline-variant/30 p-8 rounded-xl shadow-sm space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left divide-y sm:divide-y-0 sm:divide-x divide-outline-variant/30">
           {/* Total budget */}
           <div className="space-y-1 py-3 sm:py-0">
             <span className="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider block">Total Limit</span>
             <div className="flex items-center gap-2">
-              <span className="text-[36px] font-bold text-deep-forest leading-none">${budget.totalLimit}</span>
+              <span className="text-[36px] font-bold text-primary leading-none">${budget.totalLimit}</span>
               <button
                 onClick={() => setLimitEditOpen(true)}
                 className="text-secondary hover:text-primary transition-colors flex items-center"
@@ -177,7 +177,7 @@ export const Budget: React.FC = () => {
           {/* Total spent */}
           <div className="space-y-1 py-3 sm:py-0 sm:pl-6">
             <span className="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider block">Total Spent</span>
-            <span className={`text-[36px] font-bold leading-none ${isOver ? 'text-error' : 'text-deep-forest'}`}>
+            <span className={`text-[36px] font-bold leading-none ${isOver ? 'text-error' : 'text-primary'}`}>
               ${spent}
             </span>
           </div>
@@ -210,16 +210,16 @@ export const Budget: React.FC = () => {
       {/* Grid details */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         {/* Left Column (5 Columns) - Category Summary */}
-        <div className="lg:col-span-5 bg-white border border-deep-forest/5 rounded-3xl p-6 md:p-8 space-y-6">
+        <div className="lg:col-span-5 bg-white border border-outline-variant/30 rounded-xl p-6 md:p-8 space-y-6">
           <header className="border-b border-outline-variant/30 pb-4">
-            <h3 className="font-headline-sm text-[22px] font-bold text-primary">Category Breakdown</h3>
+            <h3 className="font-headline-sm text-[22px] font-bold text-primary font-semibold">Category Breakdown</h3>
           </header>
 
           <div className="space-y-5">
             {categorySummary.map((cat) => (
               <div key={cat.name} className="space-y-1">
                 <div className="flex justify-between items-center text-[14px]">
-                  <span className="flex items-center gap-2 font-medium text-deep-forest">
+                  <span className="flex items-center gap-2 font-medium text-primary">
                     <span className="material-symbols-outlined text-[18px] text-primary/70">
                       {categoryIcons[cat.name]}
                     </span>
@@ -231,7 +231,7 @@ export const Budget: React.FC = () => {
                 </div>
                 <div className="w-full bg-surface-container h-2 rounded-full overflow-hidden">
                   <div
-                    className="h-full rounded-full bg-terracotta transition-all duration-500"
+                    className="h-full rounded-full bg-secondary transition-all duration-500"
                     style={{ width: `${cat.pct}%` }}
                   ></div>
                 </div>
@@ -241,12 +241,12 @@ export const Budget: React.FC = () => {
         </div>
 
         {/* Right Column (7 Columns) - Transactions list */}
-        <div className="lg:col-span-7 bg-white border border-deep-forest/5 rounded-3xl p-6 md:p-8 space-y-6">
+        <div className="lg:col-span-7 bg-white border border-outline-variant/30 rounded-xl p-6 md:p-8 space-y-6">
           <header className="flex justify-between items-center border-b border-outline-variant/30 pb-4">
-            <h3 className="font-headline-sm text-[22px] font-bold text-primary">Transactions Log</h3>
+            <h3 className="font-headline-sm text-[22px] font-bold text-primary font-semibold">Transactions Log</h3>
             <button
               onClick={() => setModalOpen(true)}
-              className="bg-primary text-white hover:bg-secondary border border-deep-forest/20 font-label-sm text-[12px] px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5"
+              className="bg-primary text-on-primary hover:bg-surface-tint border border-outline-variant/30 font-label-sm text-[12px] px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5 font-semibold"
             >
               <span className="material-symbols-outlined text-[16px]">add</span> Add Expense
             </button>
@@ -259,7 +259,7 @@ export const Budget: React.FC = () => {
                 .map((exp) => (
                   <div
                     key={exp.id}
-                    className="bg-surface-container-low border border-deep-forest/5 p-4 rounded-xl flex justify-between items-center hover:border-deep-forest/15 transition-all text-left"
+                    className="bg-surface-container-low border border-outline-variant/30 p-4 rounded-lg flex justify-between items-center hover:border-primary/20 transition-all text-left"
                   >
                     <div className="flex items-center gap-3">
                       <span className="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center">
@@ -268,7 +268,7 @@ export const Budget: React.FC = () => {
                         </span>
                       </span>
                       <div>
-                        <h4 className="font-semibold text-deep-forest text-[14px] leading-tight">{exp.title}</h4>
+                        <h4 className="font-semibold text-primary text-[14px] leading-tight">{exp.title}</h4>
                         <p className="text-[11.5px] text-on-surface-variant flex items-center gap-2 mt-1">
                           <span className="capitalize">{exp.category === 'Food' ? 'Food & Dining' : exp.category}</span>
                           <span>•</span>
@@ -283,7 +283,7 @@ export const Budget: React.FC = () => {
                       <span className="font-bold text-primary text-[15px]">${exp.amount}</span>
                       <button
                         onClick={() => handleDeleteExpense(exp.id)}
-                        className="text-deep-forest/30 hover:text-error transition-colors p-1"
+                        className="text-on-surface-variant hover:text-error transition-colors p-1"
                         title="Remove Expense"
                       >
                         <span className="material-symbols-outlined text-[18px]">delete</span>
@@ -353,7 +353,7 @@ export const Budget: React.FC = () => {
             onChange={(e) => setExpenseDate(e.target.value)}
           />
 
-          <Button type="submit" variant="primary" fullWidth className="py-3 bg-primary hover:bg-secondary">
+          <Button type="submit" variant="primary" fullWidth className="py-3 bg-primary hover:bg-surface-tint rounded-xl font-semibold">
             Log Transaction
           </Button>
         </form>
@@ -374,7 +374,7 @@ export const Budget: React.FC = () => {
             onChange={(e) => setNewLimit(e.target.value)}
             required
           />
-          <Button type="submit" variant="primary" fullWidth className="py-3 bg-primary hover:bg-secondary">
+          <Button type="submit" variant="primary" fullWidth className="py-3 bg-primary hover:bg-surface-tint rounded-xl font-semibold">
             Save Limit
           </Button>
         </form>

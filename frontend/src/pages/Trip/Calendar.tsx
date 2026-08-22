@@ -111,49 +111,49 @@ export const Calendar: React.FC = () => {
         </div>
 
         <nav className="flex flex-wrap gap-2">
-          <Link to={`/trips/${trip.id}/builder`} className="px-4 py-2 bg-white border border-deep-forest/10 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors">
+          <Link to={`/trips/${trip.id}/builder`} className="px-4 py-2 bg-white border border-outline-variant/30 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors">
             Builder
           </Link>
-          <Link to={`/trips/${trip.id}/itinerary`} className="px-4 py-2 bg-white border border-deep-forest/10 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors">
+          <Link to={`/trips/${trip.id}/itinerary`} className="px-4 py-2 bg-white border border-outline-variant/30 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors">
             Itinerary
           </Link>
-          <Link to={`/trips/${trip.id}/budget`} className="px-4 py-2 bg-white border border-deep-forest/10 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors">
+          <Link to={`/trips/${trip.id}/budget`} className="px-4 py-2 bg-white border border-outline-variant/30 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors">
             Budget
           </Link>
           <Link to={`/trips/${trip.id}/calendar`} className="px-4 py-2 bg-primary text-on-primary rounded-full font-label-sm text-[12px] uppercase tracking-wide">
             Calendar
           </Link>
-          <Link to={`/share/token-${trip.id}`} className="px-4 py-2 bg-white border border-deep-forest/10 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors flex items-center gap-1.5">
+          <Link to={`/share/token-${trip.id}`} className="px-4 py-2 bg-white border border-outline-variant/30 hover:bg-surface-container rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wide transition-colors flex items-center gap-1.5">
             <span className="material-symbols-outlined text-[16px]">share</span> Share
           </Link>
         </nav>
       </div>
 
       {/* Responsive Calendar Panels */}
-      <section className="bg-white border border-deep-forest/5 p-6 md:p-8 rounded-3xl shadow-md">
+      <section className="bg-white border border-outline-variant/30 p-6 md:p-8 rounded-xl shadow-sm">
         {/* Desktop View (Weekly Grid Layout) */}
         <div className="hidden md:block overflow-x-auto">
           <div className="min-w-[800px] grid grid-cols-7 gap-4">
             {calendarDays.map((day, idx) => (
               <div key={idx} className="flex flex-col gap-3 min-h-[300px]">
                 {/* Day Header */}
-                <div className="bg-surface-container-low border border-deep-forest/5 p-3 rounded-xl text-center space-y-0.5 shrink-0">
-                  <span className="font-bold text-deep-forest font-headline-sm text-[14px]">{day.label}</span>
+                <div className="bg-surface-container-low border border-outline-variant/30 p-3 rounded-lg text-center space-y-0.5 shrink-0">
+                  <span className="font-bold text-primary font-headline-sm text-[14px]">{day.label}</span>
                   <p className="text-[10px] text-on-surface-variant font-medium tracking-wide uppercase">
                     {day.dateStr.includes(',') ? day.dateStr.split(',')[1].trim() : day.dateStr}
                   </p>
                 </div>
 
                 {/* Day Activities Box */}
-                <div className="flex-1 bg-surface-container-low/30 border border-dashed border-outline-variant/40 rounded-xl p-3 space-y-2.5">
+                <div className="flex-1 bg-surface-container-low/30 border border-dashed border-outline-variant/40 rounded-lg p-3 space-y-2.5">
                   {day.activities.length > 0 ? (
                     day.activities.map((tripAct) => (
                       <div
                         key={tripAct.id}
                         onClick={() => navigate(`/trips/${trip.id}/builder`)}
-                        className="bg-white border border-deep-forest/5 hover:border-terracotta p-2.5 rounded-lg shadow-sm text-[11px] text-left cursor-pointer transition-all space-y-1"
+                        className="bg-white border border-outline-variant/30 hover:border-primary p-2.5 rounded-lg shadow-sm text-[11px] text-left cursor-pointer transition-all space-y-1"
                       >
-                        <div className="font-semibold text-deep-forest leading-tight line-clamp-2">
+                        <div className="font-semibold text-primary leading-tight line-clamp-2">
                           {tripAct.activity?.name}
                         </div>
                         
@@ -190,7 +190,7 @@ export const Calendar: React.FC = () => {
               <div key={idx} className="flex gap-4 text-left">
                 {/* Left Tag */}
                 <div className="w-16 shrink-0 space-y-0.5">
-                  <span className="font-bold text-deep-forest font-headline-sm text-[15px] block">{day.label}</span>
+                  <span className="font-bold text-primary font-headline-sm text-[15px] block">{day.label}</span>
                   <span className="text-[10px] text-on-surface-variant uppercase tracking-wider block">{day.dateStr.split(',')[1] || day.dateStr}</span>
                 </div>
 
@@ -200,10 +200,10 @@ export const Calendar: React.FC = () => {
                     day.activities.map((tripAct) => (
                       <div
                         key={tripAct.id}
-                        className="bg-surface-container-low border border-deep-forest/5 p-3 rounded-xl flex justify-between items-center text-[12px]"
+                        className="bg-surface-container-low border border-outline-variant/30 p-3 rounded-lg flex justify-between items-center text-[12px]"
                       >
                         <div>
-                          <h4 className="font-semibold text-deep-forest">{tripAct.activity?.name}</h4>
+                          <h4 className="font-semibold text-primary">{tripAct.activity?.name}</h4>
                           <div className="flex items-center gap-2 text-[10.5px] text-on-surface-variant mt-0.5">
                             <span className="capitalize">{tripAct.activity?.category}</span>
                             <span>•</span>
@@ -217,7 +217,7 @@ export const Calendar: React.FC = () => {
                       </div>
                     ))
                   ) : (
-                    <div className="text-[11.5px] text-on-surface-variant/40 italic py-1 border-b border-dashed border-outline-variant/40">
+                    <div className="text-[11.5px] text-on-surface-variant/40 italic py-1 border-b border-dashed border-outline-variant/30">
                       Resting or travel transit. No activities scheduled.
                     </div>
                   )}

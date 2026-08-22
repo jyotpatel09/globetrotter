@@ -179,20 +179,20 @@ export const ItineraryBuilder: React.FC = () => {
       {/* Main Split Layout Container */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch flex-grow min-h-[60vh]">
         {/* Left Pane (7 Columns) - Stop Checklist & Timeline */}
-        <div className="lg:col-span-6 xl:col-span-7 bg-white/40 border border-deep-forest/5 rounded-3xl p-6 md:p-8 space-y-8 flex flex-col justify-between">
+        <div className="lg:col-span-6 xl:col-span-7 bg-white/40 border border-outline-variant/30 rounded-xl p-6 md:p-8 space-y-8 flex flex-col justify-between">
           <div className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="font-headline-sm text-[22px] font-bold text-primary">Staging Timeline</h2>
               <button
                 onClick={() => setStopModalOpen(true)}
-                className="bg-transparent text-primary hover:text-secondary border border-deep-forest/20 hover:border-secondary font-label-sm text-[12px] px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5"
+                className="bg-transparent text-primary hover:text-secondary border border-outline-variant/30 hover:border-secondary font-label-sm text-[12px] px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5"
               >
                 <span className="material-symbols-outlined text-[16px]">add</span> Add Stop
               </button>
             </div>
 
             {/* List of Stops */}
-            <div className="space-y-6 relative border-l-2 border-primary/10 ml-3 pl-6">
+            <div className="space-y-6 relative border-l-2 border-primary/20 ml-3 pl-6">
               {trip.stops.map((stop, index) => {
                 const isSelected = stop.id === selectedStopId;
                 const actCount = stop.activities?.length || 0;
@@ -201,20 +201,20 @@ export const ItineraryBuilder: React.FC = () => {
                   <div
                     key={stop.id}
                     onClick={() => setSelectedStopId(stop.id)}
-                    className={`relative cursor-pointer group p-5 rounded-2xl border transition-all ${
+                    className={`relative cursor-pointer group p-5 rounded-xl border transition-all ${
                       isSelected
                         ? 'bg-white border-primary shadow-sm'
-                        : 'bg-white/50 border-deep-forest/5 hover:bg-white/80'
+                        : 'bg-white/50 border-outline-variant/30 hover:bg-white/80'
                     }`}
                   >
                     {/* Circle Bullet along the timeline */}
-                    <span className={`absolute -left-[35px] top-7 w-4 h-4 rounded-full border-2 transition-colors ${
-                      isSelected ? 'bg-terracotta border-primary' : 'bg-white border-primary/30 group-hover:border-primary'
+                    <span className={`absolute -left-[33px] top-7 w-4 h-4 rounded-full border-2 transition-colors ${
+                      isSelected ? 'bg-secondary border-primary' : 'bg-white border-primary/30 group-hover:border-primary'
                     }`} />
 
                     <div className="flex justify-between items-start">
                       <div className="text-left space-y-1">
-                        <span className="font-label-sm text-[10px] text-terracotta tracking-wider uppercase font-semibold">
+                        <span className="font-label-sm text-[10px] text-secondary tracking-wider uppercase font-semibold">
                           Stop #{index + 1}
                         </span>
                         <h4 className="font-headline-sm text-[20px] font-bold text-primary">{stop.city?.name}</h4>
@@ -231,7 +231,7 @@ export const ItineraryBuilder: React.FC = () => {
                         </span>
                         <button
                           onClick={(e) => handleDeleteStop(e, stop.id)}
-                          className="text-deep-forest/40 hover:text-error transition-colors p-1 rounded-full hover:bg-black/5 flex items-center justify-center"
+                          className="text-on-surface-variant hover:text-error transition-colors p-1 rounded-full hover:bg-black/5 flex items-center justify-center"
                           title="Remove Stop"
                         >
                           <span className="material-symbols-outlined text-[18px]">delete</span>
@@ -245,11 +245,11 @@ export const ItineraryBuilder: React.FC = () => {
                         {stop.activities.map((tripAct) => (
                           <div
                             key={tripAct.id}
-                            className="bg-surface-container-low border border-deep-forest/5 p-3.5 rounded-xl flex justify-between items-center text-[13px]"
+                            className="bg-surface-container-low border border-outline-variant/30 p-3.5 rounded-lg flex justify-between items-center text-[13px]"
                           >
                             <div className="text-left space-y-1">
                               <div className="flex items-center gap-2">
-                                <span className="font-semibold text-deep-forest font-body-md text-[14px]">
+                                <span className="font-semibold text-primary font-body-md text-[14px]">
                                   {tripAct.activity?.name}
                                 </span>
                                 {tripAct.activity?.cost && tripAct.activity.cost > 0 ? (
@@ -271,7 +271,7 @@ export const ItineraryBuilder: React.FC = () => {
                             
                             <button
                               onClick={() => handleDeleteActivity(stop.id, tripAct.id)}
-                              className="text-deep-forest/30 hover:text-error transition-colors p-1"
+                              className="text-on-surface-variant hover:text-error transition-colors p-1"
                               title="Delete Activity"
                             >
                               <span className="material-symbols-outlined text-[16px]">close</span>
@@ -293,7 +293,7 @@ export const ItineraryBuilder: React.FC = () => {
           </div>
           
           {/* Summary status */}
-          <div className="bg-primary text-white p-6 rounded-2xl mt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-left">
+          <div className="bg-primary text-white p-6 rounded-xl mt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-left">
             <div>
               <p className="font-label-sm text-[11px] uppercase tracking-wider text-white/70">Itinerary Overview</p>
               <h4 className="font-headline-sm text-[20px] font-bold mt-1">
@@ -310,11 +310,11 @@ export const ItineraryBuilder: React.FC = () => {
         </div>
 
         {/* Right Pane (5 Columns) - Browse Activities in Selected Stop */}
-        <div className="lg:col-span-6 xl:col-span-5 bg-white border border-deep-forest/5 rounded-3xl p-6 md:p-8 space-y-6 flex flex-col justify-start h-fit max-h-[85vh] overflow-y-auto">
+        <div className="lg:col-span-6 xl:col-span-5 bg-white border border-outline-variant/30 rounded-xl p-6 md:p-8 space-y-6 flex flex-col justify-start h-fit max-h-[85vh] overflow-y-auto">
           {currentStop ? (
             <>
               <header className="space-y-2 text-left">
-                <span className="font-label-sm text-[11px] text-terracotta uppercase tracking-wider font-semibold">
+                <span className="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">
                   Browse Experiences
                 </span>
                 <h3 className="font-headline-sm text-[22px] font-bold text-primary">
@@ -327,11 +327,11 @@ export const ItineraryBuilder: React.FC = () => {
 
               {/* Search activities */}
               <div className="relative">
-                <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-deep-forest/50 text-[18px]">search</span>
+                <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/50 text-[18px]">search</span>
                 <input
                   type="text"
                   placeholder="Search local tours, spots..."
-                  className="w-full pl-9 pr-4 py-2 border border-deep-forest/20 rounded-full bg-white/50 focus:border-terracotta focus:ring-1 focus:ring-terracotta outline-none text-label-sm font-label-sm"
+                  className="w-full pl-9 pr-4 py-2 border border-outline-variant/50 rounded-full bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none text-label-sm font-label-sm text-on-surface"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
@@ -342,23 +342,23 @@ export const ItineraryBuilder: React.FC = () => {
                 {filteredActivities.map((act) => (
                   <div
                     key={act.id}
-                    className="bg-surface-container-low border border-deep-forest/5 rounded-2xl overflow-hidden flex gap-4 text-left p-3.5 group hover:border-deep-forest/20 transition-all"
+                    className="bg-surface-container-low border border-outline-variant/30 rounded-xl overflow-hidden flex gap-4 text-left p-3.5 group hover:border-primary/20 transition-all cursor-pointer"
                   >
                     <img
-                      className="w-20 h-20 rounded-xl object-cover shrink-0"
+                      className="w-20 h-20 rounded-lg object-cover shrink-0"
                       src={act.image}
                       alt={act.name}
                     />
                     <div className="flex-1 flex flex-col justify-between py-0.5">
                       <div>
-                        <h4 className="font-semibold text-deep-forest text-[14px] line-clamp-1 group-hover:text-terracotta transition-colors">
+                        <h4 className="font-semibold text-primary text-[14px] line-clamp-1 group-hover:text-secondary transition-colors">
                           {act.name}
                         </h4>
                         <p className="text-[11.5px] text-on-surface-variant line-clamp-2 mt-0.5 leading-relaxed">
                           {act.description}
                         </p>
                       </div>
-                      <div className="flex justify-between items-baseline pt-2 mt-auto">
+                      <div className="flex justify-between items-center pt-2 mt-auto">
                         <span className="font-label-sm text-[10.5px] text-primary/70 flex items-center gap-0.5">
                           <span className="material-symbols-outlined text-[14px]">schedule</span> {act.duration}
                         </span>
@@ -367,7 +367,7 @@ export const ItineraryBuilder: React.FC = () => {
                         </span>
                         <button
                           onClick={() => handleOpenScheduleActivity(act)}
-                          className="bg-primary hover:bg-secondary text-white font-label-sm text-[11px] px-3.5 py-1 rounded-full font-bold transition-colors active:scale-95 shadow-sm"
+                          className="bg-primary hover:bg-surface-tint text-on-primary font-label-sm text-[11px] px-3.5 py-1.5 rounded-full transition-colors active:scale-95 font-semibold"
                         >
                           + Add
                         </button>
@@ -385,7 +385,7 @@ export const ItineraryBuilder: React.FC = () => {
             </>
           ) : (
             <div className="flex-grow flex flex-col items-center justify-center py-20 text-center space-y-4">
-              <span className="material-symbols-outlined text-[48px] text-deep-forest/20">navigation</span>
+              <span className="material-symbols-outlined text-[48px] text-primary/20">navigation</span>
               <p className="font-body-md text-on-surface-variant max-w-xs text-[14px]">
                 Please select or add a staging stop on the left timeline to explore local experiences.
               </p>
@@ -403,11 +403,11 @@ export const ItineraryBuilder: React.FC = () => {
         <form onSubmit={handleAddStopSubmit} className="space-y-6 text-left">
           {/* Select City */}
           <div className="space-y-2">
-            <label className="font-label-md text-label-md text-primary uppercase tracking-wider block">
+            <label className="font-label-md text-label-md text-primary uppercase tracking-wider block font-semibold">
               City Destination
             </label>
             <select
-              className="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary cursor-pointer"
+              className="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary cursor-pointer text-on-surface"
               value={newCityId}
               onChange={(e) => setNewCityId(e.target.value)}
               required
@@ -423,25 +423,25 @@ export const ItineraryBuilder: React.FC = () => {
 
           {/* Dates */}
           <div className="space-y-2">
-            <label className="font-label-md text-label-md text-primary uppercase tracking-wider block">
+            <label className="font-label-md text-label-md text-primary uppercase tracking-wider block font-semibold">
               Dates
             </label>
             <div className="grid grid-cols-2 gap-4">
               <div className="relative">
-                <span className="material-symbols-outlined absolute left-2 bottom-3 text-outline text-[18px]">calendar_today</span>
+                <span className="material-symbols-outlined absolute left-2 bottom-3 text-on-surface-variant text-[18px]">calendar_today</span>
                 <input
                   type="date"
-                  className="input-underline w-full pl-8 font-body-md text-body-md"
+                  className="input-underline w-full pl-8 font-body-md text-body-md text-on-surface"
                   placeholder="Arrival"
                   value={arrivalDate}
                   onChange={(e) => setArrivalDate(e.target.value)}
                 />
               </div>
               <div className="relative">
-                <span className="material-symbols-outlined absolute left-2 bottom-3 text-outline text-[18px]">calendar_today</span>
+                <span className="material-symbols-outlined absolute left-2 bottom-3 text-on-surface-variant text-[18px]">calendar_today</span>
                 <input
                   type="date"
-                  className="input-underline w-full pl-8 font-body-md text-body-md"
+                  className="input-underline w-full pl-8 font-body-md text-body-md text-on-surface"
                   placeholder="Departure"
                   value={departureDate}
                   onChange={(e) => setDepartureDate(e.target.value)}
@@ -450,7 +450,7 @@ export const ItineraryBuilder: React.FC = () => {
             </div>
           </div>
 
-          <Button type="submit" variant="primary" fullWidth className="py-3 bg-primary hover:bg-secondary">
+          <Button type="submit" variant="primary" fullWidth className="py-3 bg-primary hover:bg-surface-tint rounded-xl font-semibold">
             Confirm Add Stop
           </Button>
         </form>
@@ -464,10 +464,10 @@ export const ItineraryBuilder: React.FC = () => {
       >
         {selectedActivity && (
           <form onSubmit={handleScheduleActivitySubmit} className="space-y-6 text-left">
-            <div className="bg-surface-container-low border border-deep-forest/5 p-4 rounded-xl flex gap-4">
+            <div className="bg-surface-container-low border border-outline-variant/30 p-4 rounded-lg flex gap-4">
               <img src={selectedActivity.image} className="w-16 h-16 rounded-lg object-cover" alt="" />
               <div>
-                <h4 className="font-semibold text-deep-forest text-[14px]">{selectedActivity.name}</h4>
+                <h4 className="font-semibold text-primary text-[14px]">{selectedActivity.name}</h4>
                 <p className="text-[11.5px] text-on-surface-variant mt-0.5 line-clamp-2">{selectedActivity.description}</p>
                 <div className="flex justify-between items-center mt-2 text-[12px]">
                   <span className="text-secondary font-semibold font-label-sm">${selectedActivity.cost} / person</span>
@@ -477,21 +477,21 @@ export const ItineraryBuilder: React.FC = () => {
             </div>
 
             <div className="space-y-2">
-              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block">
+              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block font-semibold">
                 Scheduled Start Time (Optional)
               </label>
               <div className="relative">
-                <span className="material-symbols-outlined absolute left-2 bottom-3 text-outline text-[18px]">schedule</span>
+                <span className="material-symbols-outlined absolute left-2 bottom-3 text-on-surface-variant text-[18px]">schedule</span>
                 <input
                   type="time"
-                  className="input-underline w-full pl-8 font-body-md text-body-md"
+                  className="input-underline w-full pl-8 font-body-md text-body-md text-on-surface"
                   value={scheduledTime}
                   onChange={(e) => setScheduledTime(e.target.value)}
                 />
               </div>
             </div>
 
-            <Button type="submit" variant="primary" fullWidth className="py-3 bg-primary hover:bg-secondary">
+            <Button type="submit" variant="primary" fullWidth className="py-3 bg-primary hover:bg-surface-tint rounded-xl font-semibold">
               Add to Timeline
             </Button>
           </form>

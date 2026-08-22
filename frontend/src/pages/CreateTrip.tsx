@@ -90,14 +90,14 @@ export const CreateTrip: React.FC = () => {
 
             {/* Dates */}
             <div className="space-y-3">
-              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block">
+              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block font-semibold">
                 Travel Dates
               </label>
               <div className="flex flex-col sm:flex-row gap-6 items-center">
                 <div className="w-full sm:w-1/2 relative">
-                  <span className="material-symbols-outlined absolute left-0 bottom-3 text-outline text-[20px] pointer-events-none">calendar_today</span>
+                  <span className="material-symbols-outlined absolute left-0 bottom-3 text-on-surface-variant text-[20px] pointer-events-none">calendar_today</span>
                   <input
-                    className="input-underline w-full pl-8 font-body-lg text-body-lg"
+                    className="input-underline w-full pl-8 font-body-lg text-body-lg text-on-surface"
                     placeholder="Start Date"
                     type="date"
                     value={startDate}
@@ -106,9 +106,9 @@ export const CreateTrip: React.FC = () => {
                 </div>
                 <div className="hidden sm:block text-outline-variant font-light pb-2">to</div>
                 <div className="w-full sm:w-1/2 relative">
-                  <span className="material-symbols-outlined absolute left-0 bottom-3 text-outline text-[20px] pointer-events-none">calendar_today</span>
+                  <span className="material-symbols-outlined absolute left-0 bottom-3 text-on-surface-variant text-[20px] pointer-events-none">calendar_today</span>
                   <input
-                    className="input-underline w-full pl-8 font-body-lg text-body-lg"
+                    className="input-underline w-full pl-8 font-body-lg text-body-lg text-on-surface"
                     placeholder="End Date"
                     type="date"
                     value={endDate}
@@ -118,7 +118,7 @@ export const CreateTrip: React.FC = () => {
               </div>
               {daysCount !== null && (
                 <div className="pt-2">
-                  <span className="bg-surface-container-high text-on-surface font-label-sm text-label-sm px-3.5 py-1.5 rounded-full inline-block">
+                  <span className="bg-surface-container-high text-primary font-label-sm text-label-sm px-3.5 py-1.5 rounded-full inline-block font-bold">
                     {daysCount} Days
                   </span>
                 </div>
@@ -138,7 +138,7 @@ export const CreateTrip: React.FC = () => {
 
             {/* Submit */}
             <div className="pt-4 flex flex-col sm:flex-row gap-4">
-              <Button type="submit" variant="primary" size="lg" className="px-10 py-3 bg-primary hover:bg-secondary text-white rounded-full font-label-md shadow-md active:scale-95">
+              <Button type="submit" variant="primary" size="lg" className="px-10 py-3.5 bg-primary hover:bg-surface-tint text-on-primary rounded-xl font-label-md font-semibold transition-all active:scale-95">
                 Create & Add Stops
               </Button>
               <Button
@@ -146,7 +146,7 @@ export const CreateTrip: React.FC = () => {
                 variant="ghost"
                 size="lg"
                 onClick={() => navigate('/dashboard')}
-                className="text-deep-forest hover:bg-black/5"
+                className="text-primary hover:bg-black/5 rounded-xl font-semibold"
               >
                 Cancel
               </Button>
@@ -155,7 +155,7 @@ export const CreateTrip: React.FC = () => {
         </div>
 
         {/* Right Column: Editorial Graphic */}
-        <div className="hidden lg:block lg:col-span-5 xl:col-span-6 relative rounded-[2rem] overflow-hidden border border-deep-forest/10 min-h-full">
+        <div className="hidden lg:block lg:col-span-5 xl:col-span-6 relative rounded-xl overflow-hidden border border-outline-variant/30 min-h-full">
           <img
             className="absolute inset-0 w-full h-full object-cover"
             alt="Contemplative Zen Garden"

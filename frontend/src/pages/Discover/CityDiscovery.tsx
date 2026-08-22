@@ -87,7 +87,7 @@ export const CityDiscovery: React.FC = () => {
           <input
             type="text"
             placeholder="Search by city or country..."
-            className="w-full pl-10 pr-4 py-2 border border-deep-forest/20 rounded-full bg-white/50 focus:border-terracotta focus:ring-1 focus:ring-terracotta outline-none text-body-md font-body-md"
+            className="w-full pl-10 pr-4 py-2 border border-outline-variant/50 rounded-full bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-md font-body-md text-on-surface"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -98,13 +98,13 @@ export const CityDiscovery: React.FC = () => {
       <div className="flex gap-4 -mt-4">
         <button
           onClick={() => navigate('/discover')}
-          className="px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-[12px] uppercase tracking-wider"
+          className="px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-[12px] uppercase tracking-wider font-semibold"
         >
           Cities
         </button>
         <button
           onClick={() => navigate('/discover/activities')}
-          className="px-5 py-2 bg-white hover:bg-surface-container border border-deep-forest/10 rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wider transition-colors"
+          className="px-5 py-2 bg-white hover:bg-surface-container border border-outline-variant/30 rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wider transition-colors font-semibold"
         >
           Activities
         </button>
@@ -116,7 +116,7 @@ export const CityDiscovery: React.FC = () => {
           <div
             key={city.id}
             onClick={() => navigate('/discover/activities', { state: { cityId: city.id } })}
-            className="group relative rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl border border-deep-forest/5 aspect-[3/4] flex flex-col justify-end text-left"
+            className="group relative rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl border border-outline-variant/30 aspect-[3/4] flex flex-col justify-end text-left"
           >
             {/* Image */}
             <div
@@ -140,7 +140,7 @@ export const CityDiscovery: React.FC = () => {
               <div className="pt-2 flex gap-3">
                 <button
                   onClick={(e) => handleOpenAddModal(e, city)}
-                  className="flex-1 bg-white text-primary font-label-sm text-[12px] py-2.5 rounded-full hover:bg-secondary hover:text-white transition-colors text-center font-bold active:scale-95 shadow-sm"
+                  className="flex-1 bg-white text-primary font-label-sm text-[12px] py-2.5 rounded-full hover:bg-surface-tint hover:text-white transition-colors text-center font-bold active:scale-95 shadow-sm"
                 >
                   Add to Trip
                 </button>
@@ -160,8 +160,8 @@ export const CityDiscovery: React.FC = () => {
         ))}
 
         {filteredCities.length === 0 && (
-          <div className="col-span-full py-16 text-center bg-white rounded-3xl border border-deep-forest/5 shadow-sm space-y-3 max-w-lg mx-auto w-full">
-            <span className="material-symbols-outlined text-[48px] text-deep-forest/30">location_off</span>
+          <div className="col-span-full py-16 text-center bg-white rounded-xl border border-outline-variant/30 shadow-sm space-y-3 max-w-lg mx-auto w-full">
+            <span className="material-symbols-outlined text-[48px] text-primary/30">location_off</span>
             <h4 className="font-headline-sm text-primary">No destinations found</h4>
             <p className="font-body-md text-on-surface-variant text-[14px]">
               We couldn't find any cities matching your query. Check spelling or clear search filters.
@@ -191,11 +191,11 @@ export const CityDiscovery: React.FC = () => {
           <form onSubmit={handleAddStopSubmit} className="space-y-6 text-left">
             {/* Select Trip */}
             <div className="space-y-2">
-              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block">
+              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block font-semibold">
                 Select Journey
               </label>
               <select
-                className="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary"
+                className="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary text-on-surface cursor-pointer"
                 value={targetTripId}
                 onChange={(e) => setTargetTripId(e.target.value)}
                 required
@@ -210,25 +210,25 @@ export const CityDiscovery: React.FC = () => {
 
             {/* Arrival & Departure */}
             <div className="space-y-2">
-              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block">
+              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block font-semibold">
                 Staging Dates (Optional)
               </label>
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative">
-                  <span className="material-symbols-outlined absolute left-2 bottom-3 text-outline text-[18px]">calendar_today</span>
+                  <span className="material-symbols-outlined absolute left-2 bottom-3 text-on-surface-variant text-[18px]">calendar_today</span>
                   <input
                     type="date"
-                    className="input-underline w-full pl-8 font-body-md text-body-md"
+                    className="input-underline w-full pl-8 font-body-md text-body-md text-on-surface"
                     placeholder="Arrival"
                     value={arrivalDate}
                     onChange={(e) => setArrivalDate(e.target.value)}
                   />
                 </div>
                 <div className="relative">
-                  <span className="material-symbols-outlined absolute left-2 bottom-3 text-outline text-[18px]">calendar_today</span>
+                  <span className="material-symbols-outlined absolute left-2 bottom-3 text-on-surface-variant text-[18px]">calendar_today</span>
                   <input
                     type="date"
-                    className="input-underline w-full pl-8 font-body-md text-body-md"
+                    className="input-underline w-full pl-8 font-body-md text-body-md text-on-surface"
                     placeholder="Departure"
                     value={departureDate}
                     onChange={(e) => setDepartureDate(e.target.value)}
@@ -237,14 +237,14 @@ export const CityDiscovery: React.FC = () => {
               </div>
             </div>
 
-            <Button type="submit" variant="primary" fullWidth className="py-3 bg-primary hover:bg-secondary">
+            <Button type="submit" variant="primary" fullWidth className="py-3 bg-primary hover:bg-surface-tint rounded-xl font-semibold">
               Confirm Add Stop
             </Button>
           </form>
         ) : (
           /* Empty Trips state in modal */
           <div className="text-center py-6 space-y-4">
-            <p className="font-body-md text-on-surface-variant">
+            <p className="font-body-md text-on-surface-variant text-center">
               You don't have any planned trips yet to add stops to. Let's create one first!
             </p>
             <Button
@@ -254,7 +254,7 @@ export const CityDiscovery: React.FC = () => {
                 setModalOpen(false);
                 navigate('/trips/new');
               }}
-              className="px-6 py-2 bg-primary"
+              className="px-6 py-2.5 bg-primary hover:bg-surface-tint rounded-xl font-semibold"
             >
               Plan a Trip
             </Button>

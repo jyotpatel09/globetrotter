@@ -126,7 +126,7 @@ export const ActivityDiscovery: React.FC = () => {
       {/* Header, Search, Dropdowns */}
       <section className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-outline-variant/20 pb-6">
         <div className="space-y-1">
-          <h1 className="font-display-lg text-[40px] text-deep-forest font-bold leading-tight">Curated Activities</h1>
+          <h1 className="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-2 font-bold leading-tight">Curated Activities</h1>
           <p className="font-body-md text-on-surface-variant max-w-xl text-[14.5px]">
             Browse local experiences, sights, and culinary spots. Schedule them into your stops.
           </p>
@@ -136,7 +136,7 @@ export const ActivityDiscovery: React.FC = () => {
         <div className="flex flex-wrap gap-4 w-full md:w-auto">
           {/* City Selector */}
           <select
-            className="bg-white border border-deep-forest/25 px-4 py-2 rounded-full font-label-sm text-[13px] text-primary focus:outline-none w-full md:w-48 cursor-pointer"
+            className="bg-white border border-outline-variant/60 px-4 py-2 rounded-full font-label-sm text-[13px] text-primary focus:outline-none w-full md:w-48 cursor-pointer text-on-surface"
             value={selectedCityId}
             onChange={(e) => setSelectedCityId(e.target.value)}
           >
@@ -148,11 +148,11 @@ export const ActivityDiscovery: React.FC = () => {
 
           {/* Search bar */}
           <div className="relative flex-grow md:flex-grow-0 md:w-64">
-            <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-deep-forest/50 text-[18px]">search</span>
+            <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/50 text-[18px]">search</span>
             <input
               type="text"
               placeholder="Search activities..."
-              className="w-full pl-9 pr-4 py-2 border border-deep-forest/20 rounded-full bg-white/50 focus:border-terracotta focus:ring-1 focus:ring-terracotta outline-none text-label-sm font-label-sm"
+              className="w-full pl-9 pr-4 py-2 border border-outline-variant/50 rounded-full bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none text-label-sm font-label-sm text-on-surface"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -166,13 +166,13 @@ export const ActivityDiscovery: React.FC = () => {
         <div className="flex gap-4">
           <button
             onClick={() => navigate('/discover')}
-            className="px-5 py-2 bg-white hover:bg-surface-container border border-deep-forest/10 rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wider transition-colors"
+            className="px-5 py-2 bg-white hover:bg-surface-container border border-outline-variant/30 rounded-full font-label-sm text-[12px] text-primary uppercase tracking-wider transition-colors font-semibold"
           >
             Cities
           </button>
           <button
             onClick={() => navigate('/discover/activities')}
-            className="px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-[12px] uppercase tracking-wider"
+            className="px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-[12px] uppercase tracking-wider font-semibold"
           >
             Activities
           </button>
@@ -186,8 +186,8 @@ export const ActivityDiscovery: React.FC = () => {
               onClick={() => setCategoryFilter(cat)}
               className={`px-4 py-1.5 rounded-full font-label-sm text-[11px] uppercase tracking-wide border transition-all ${
                 categoryFilter === cat
-                  ? 'bg-deep-forest text-white border-deep-forest'
-                  : 'bg-white text-deep-forest/75 border-deep-forest/10 hover:border-deep-forest/30'
+                  ? 'bg-primary text-on-primary border-primary font-bold'
+                  : 'bg-white text-on-surface border-outline-variant/30 hover:border-primary'
               }`}
             >
               {cat === 'all' ? 'All categories' : cat}
@@ -203,7 +203,7 @@ export const ActivityDiscovery: React.FC = () => {
           return (
             <div
               key={act.id}
-              className="group bg-surface rounded-2xl overflow-hidden shadow-md hover:shadow-lg border border-deep-forest/5 flex flex-col justify-between text-left"
+              className="group bg-surface rounded-xl overflow-hidden shadow-md hover:shadow-lg border border-outline-variant/30 flex flex-col justify-between text-left"
             >
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -237,7 +237,7 @@ export const ActivityDiscovery: React.FC = () => {
                   </div>
                   <button
                     onClick={() => handleOpenScheduleModal(act)}
-                    className="w-full bg-primary hover:bg-secondary text-white font-label-md text-[13px] py-2.5 rounded-full transition-colors font-semibold shadow-sm active:scale-95 text-center"
+                    className="w-full bg-primary hover:bg-surface-tint text-on-primary font-label-md text-[13px] py-2.5 rounded-xl transition-colors font-semibold shadow-sm active:scale-95 text-center"
                   >
                     Add to Itinerary
                   </button>
@@ -248,9 +248,9 @@ export const ActivityDiscovery: React.FC = () => {
         })}
 
         {filteredActivities.length === 0 && (
-          <div className="col-span-full py-16 text-center bg-white rounded-3xl border border-deep-forest/5 shadow-sm space-y-3 max-w-lg mx-auto w-full">
-            <span className="material-symbols-outlined text-[48px] text-deep-forest/30">local_activity</span>
-            <h4 className="font-headline-sm text-primary">No activities found</h4>
+          <div className="col-span-full py-16 text-center bg-white rounded-xl border border-outline-variant/30 shadow-sm space-y-3 max-w-lg mx-auto w-full">
+            <span className="material-symbols-outlined text-[48px] text-primary/30">local_activity</span>
+            <h4 className="font-headline-sm text-primary font-semibold">No activities found</h4>
             <p className="font-body-md text-on-surface-variant text-[14px]">
               We couldn't find any activities matching your filters. Select another city or search tag.
             </p>
@@ -283,11 +283,11 @@ export const ActivityDiscovery: React.FC = () => {
           <form onSubmit={handleScheduleSubmit} className="space-y-6 text-left">
             {/* Step 1: Select Journey */}
             <div className="space-y-2">
-              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block">
+              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block font-semibold">
                 Select Journey
               </label>
               <select
-                className="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary"
+                className="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary text-on-surface cursor-pointer"
                 value={targetTripId}
                 onChange={(e) => setTargetTripId(e.target.value)}
                 required
@@ -302,12 +302,12 @@ export const ActivityDiscovery: React.FC = () => {
 
             {/* Step 2: Select Stop (matching city) */}
             <div className="space-y-2">
-              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block">
+              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block font-semibold">
                 Select Stop in Destination
               </label>
               {availableStops.length > 0 ? (
                 <select
-                  className="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary"
+                  className="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary text-on-surface cursor-pointer"
                   value={targetStopId}
                   onChange={(e) => setTargetStopId(e.target.value)}
                   required
@@ -331,14 +331,14 @@ export const ActivityDiscovery: React.FC = () => {
             {/* Step 3: Select Time */}
             {availableStops.length > 0 && (
               <div className="space-y-2">
-                <label className="font-label-md text-label-md text-primary uppercase tracking-wider block">
+                <label className="font-label-md text-label-md text-primary uppercase tracking-wider block font-semibold">
                   Scheduled Time (Optional)
                 </label>
                 <div className="relative">
-                  <span className="material-symbols-outlined absolute left-2 bottom-3 text-outline text-[18px]">schedule</span>
+                  <span className="material-symbols-outlined absolute left-2 bottom-3 text-on-surface-variant text-[18px]">schedule</span>
                   <input
                     type="time"
-                    className="input-underline w-full pl-8 font-body-md text-body-md"
+                    className="input-underline w-full pl-8 font-body-md text-body-md text-on-surface"
                     value={scheduledTime}
                     onChange={(e) => setScheduledTime(e.target.value)}
                   />
@@ -348,7 +348,7 @@ export const ActivityDiscovery: React.FC = () => {
 
             {/* Submit controls */}
             {availableStops.length > 0 ? (
-              <Button type="submit" variant="primary" fullWidth className="py-3 bg-primary hover:bg-secondary">
+              <Button type="submit" variant="primary" fullWidth className="py-3 bg-primary hover:bg-surface-tint rounded-xl font-semibold">
                 Confirm Add Activity
               </Button>
             ) : (
@@ -365,7 +365,7 @@ export const ActivityDiscovery: React.FC = () => {
                     // Add stop modal shortcut or redirect to discover page
                     navigate('/discover');
                   }}
-                  className="py-2.5 border border-primary hover:bg-primary hover:text-white"
+                  className="py-2.5 border border-primary hover:bg-primary hover:text-on-primary rounded-xl font-semibold"
                 >
                   Go to Cities to Add Stop
                 </Button>
@@ -375,7 +375,7 @@ export const ActivityDiscovery: React.FC = () => {
         ) : (
           /* Empty Trips state in modal */
           <div className="text-center py-6 space-y-4">
-            <p className="font-body-md text-on-surface-variant">
+            <p className="font-body-md text-on-surface-variant text-center">
               You don't have any planned trips yet. Let's create one first!
             </p>
             <Button
@@ -385,7 +385,7 @@ export const ActivityDiscovery: React.FC = () => {
                 setModalOpen(false);
                 navigate('/trips/new');
               }}
-              className="px-6 py-2 bg-primary"
+              className="px-6 py-2.5 bg-primary hover:bg-surface-tint rounded-xl font-semibold"
             >
               Plan a Trip
             </Button>

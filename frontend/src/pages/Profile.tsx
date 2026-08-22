@@ -30,7 +30,7 @@ export const Profile: React.FC = () => {
       </header>
 
       {success && (
-        <div className="bg-[#1a3a32]/10 border border-[#1a3a32]/20 text-[#1a3a32] p-4 rounded-xl text-label-sm text-[13.5px] flex items-center gap-2">
+        <div className="bg-primary/10 border border-primary/20 text-primary p-4 rounded-xl text-label-sm text-[13.5px] flex items-center gap-2">
           <span className="material-symbols-outlined text-[18px]">check_circle</span>
           <span>Your settings have been saved successfully!</span>
         </div>
@@ -38,7 +38,7 @@ export const Profile: React.FC = () => {
 
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
         {/* Avatar block (4 columns) */}
-        <div className="md:col-span-4 flex flex-col items-center p-6 bg-white border border-deep-forest/5 rounded-3xl space-y-4">
+        <div className="md:col-span-4 flex flex-col items-center p-6 bg-white border border-outline-variant/30 rounded-xl space-y-4">
           <img
             alt={name}
             className="w-28 h-28 rounded-full object-cover border-2 border-primary/20 shadow-md"
@@ -58,7 +58,7 @@ export const Profile: React.FC = () => {
         </div>
 
         {/* Form Inputs (8 columns) */}
-        <div className="md:col-span-8 bg-white border border-deep-forest/5 p-6 md:p-8 rounded-3xl space-y-6">
+        <div className="md:col-span-8 bg-white border border-outline-variant/30 p-6 md:p-8 rounded-xl space-y-6">
           <Input
             id="profile-name"
             type="text"
@@ -82,11 +82,11 @@ export const Profile: React.FC = () => {
           <div className="grid grid-cols-2 gap-6">
             {/* Preferred Currency */}
             <div className="space-y-2">
-              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block">
+              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block font-semibold">
                 Currency
               </label>
               <select
-                className="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary cursor-pointer"
+                className="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary text-on-surface cursor-pointer"
                 value={currency}
                 onChange={(e) => setCurrency(e.target.value)}
               >
@@ -98,11 +98,11 @@ export const Profile: React.FC = () => {
 
             {/* Travel Style */}
             <div className="space-y-2">
-              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block">
+              <label className="font-label-md text-label-md text-primary uppercase tracking-wider block font-semibold">
                 Travel Style
               </label>
               <select
-                className="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary cursor-pointer"
+                className="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:border-b-2 focus:border-b-primary text-on-surface cursor-pointer"
                 value={travelStyle}
                 onChange={(e) => setTravelStyle(e.target.value)}
               >
@@ -116,7 +116,7 @@ export const Profile: React.FC = () => {
           {/* Toggle sharing */}
           <div className="flex items-center justify-between border-t border-outline-variant/20 pt-4">
             <div className="text-left space-y-0.5 max-w-md">
-              <span className="font-semibold text-deep-forest text-[14px]">Public Shared Links</span>
+              <span className="font-semibold text-primary text-[14px]">Public Shared Links</span>
               <p className="text-[12px] text-on-surface-variant leading-relaxed">
                 By default, generate public viewing tokens when creating new itinerary details.
               </p>
@@ -133,7 +133,7 @@ export const Profile: React.FC = () => {
           </div>
 
           <div className="pt-4 border-t border-outline-variant/20">
-            <Button type="submit" variant="primary" className="px-8 py-2.5 bg-primary hover:bg-secondary">
+            <Button type="submit" variant="primary" className="px-8 py-2.5 bg-primary hover:bg-surface-tint rounded-xl font-semibold">
               Save Settings
             </Button>
           </div>

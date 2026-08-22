@@ -39,9 +39,9 @@ export const AppLayout: React.FC = () => {
   }
 
   return (
-    <div className="bg-[#F4EBD0]/30 text-on-surface font-body-md min-h-screen flex flex-col pb-20 md:pb-0">
+    <div className="bg-background text-on-surface font-body-md min-h-screen flex flex-col pb-20 md:pb-0">
       {/* TopAppBar - Desktop Only */}
-      <header className="bg-[#F4EBD0]/50 backdrop-blur-md sticky docked full-width top-0 border-b border-deep-forest/10 flat no shadows z-50">
+      <header className="bg-surface sticky docked full-width top-0 border-b border-outline-variant/30 flat no shadows z-50">
         <div className="flex justify-between items-center px-margin-desktop w-full max-w-container-max mx-auto h-20">
           <div className="flex items-center gap-8">
             <Link to="/dashboard" className="flex items-center gap-2">
@@ -56,8 +56,8 @@ export const AppLayout: React.FC = () => {
                     to={item.path}
                     className={`font-label-md text-label-md transition-colors scale-95 duration-200 py-1 ${
                       isActive
-                        ? 'text-deep-forest font-bold border-b-2 border-terracotta'
-                        : 'text-deep-forest/70 hover:text-deep-forest'
+                        ? 'text-primary font-bold border-b-2 border-primary'
+                        : 'text-on-surface-variant hover:text-primary'
                     }`}
                   >
                     {item.label}
@@ -70,9 +70,9 @@ export const AppLayout: React.FC = () => {
           <div className="flex items-center gap-6">
             {/* Search Bar mockup */}
             <div className="relative hidden sm:block">
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-deep-forest/50 text-[18px]">search</span>
+              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/50 text-[18px]">search</span>
               <input
-                className="pl-10 pr-4 py-1.5 rounded-full border border-deep-forest/20 bg-white/50 focus:border-terracotta focus:ring-1 focus:ring-terracotta text-label-sm font-label-sm w-48 transition-all focus:w-60 outline-none text-on-surface"
+                className="pl-10 pr-4 py-1.5 rounded-full border border-outline-variant/50 bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary text-label-sm font-label-sm w-48 transition-all focus:w-60 outline-none text-on-surface"
                 placeholder="Search destinations..."
                 type="text"
               />
@@ -83,14 +83,14 @@ export const AppLayout: React.FC = () => {
               <Link to="/profile" className="flex items-center gap-2 group">
                 <img
                   alt={mockUser.name}
-                  className="w-8 h-8 rounded-full object-cover border border-deep-forest/25 group-hover:border-terracotta transition-colors"
+                  className="w-8 h-8 rounded-full object-cover border border-outline-variant/30 group-hover:border-primary transition-colors"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlE3ctjkaiq0H3iKPnicCcCyUzqd0d0VY923spFVUBOG5UqbNF5Vlq-4lQjUDAEbpbK210I8uGxwV8MsJZKscSZIPkMOQCDuy-A-uthjQ2VFVS3MAc-2iSeDRs9QlFWKjJGoT7MO6f7_VteU6mpMUZyCGFjxJdhhkWwdRAuDvUSk5jkM-UlyBZucYPzktyQ2_tdajxGGtkqoTNFc0naof9B7UbT8zLNAeDnm5tCXwtvJG0lOObWsFRvg"
                 />
-                <span className="hidden lg:inline text-label-md text-deep-forest font-semibold">{mockUser.name}</span>
+                <span className="hidden lg:inline text-label-md text-primary font-semibold">{mockUser.name}</span>
               </Link>
               <button
                 onClick={handleLogout}
-                className="text-deep-forest/60 hover:text-error transition-colors flex items-center p-1 rounded-full hover:bg-black/5"
+                className="text-on-surface-variant hover:text-error transition-colors flex items-center p-1 rounded-full hover:bg-black/5"
                 title="Sign Out"
               >
                 <span className="material-symbols-outlined text-[20px]">logout</span>

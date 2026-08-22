@@ -22,6 +22,9 @@ export interface Activity {
   category?: 'Active' | 'Culture' | 'Food' | 'Relax' | string;
   duration?: string;
   image?: string;
+  location?: string;
+  bestTime?: string;
+  difficulty?: string;
 }
 
 export interface TripActivity {
@@ -40,6 +43,12 @@ export interface Stop {
   departure?: string; // ISO DateTime string or date
   city?: City; // Populated in frontend
   activities?: TripActivity[]; // Populated in frontend
+  description?: string;
+  thingsToSee?: string[];
+  recommendedArrival?: string;
+  travelTimeToNext?: string;
+  transportMethod?: string;
+  estimatedCost?: number;
 }
 
 export interface Expense {
@@ -58,6 +67,24 @@ export interface Budget {
   expenses: Expense[];
 }
 
+export interface StayOption {
+  name: string;
+  area: string;
+  priceRange: string;
+  rating: number;
+  type: string;
+  amenities: string[];
+  reason: string;
+}
+
+export interface FoodPlan {
+  breakfast: string;
+  lunch: string;
+  dinner: string;
+  mustTry: string;
+  streetFood?: string;
+}
+
 export interface Trip {
   id: string;
   userId: string;
@@ -68,6 +95,20 @@ export interface Trip {
   updatedAt: string;
   stops: Stop[];
   budget?: Budget; // Frontend specific extension
+  
+  // Premium details
+  description?: string;
+  fullDescription?: string;
+  category?: string;
+  travelStyle?: string;
+  difficulty?: string;
+  bestSeason?: string;
+  highlights?: string[];
+  tips?: string[];
+  accommodationOptions?: StayOption[];
+  foodPlan?: FoodPlan;
+  localExperiences?: string[];
+  transportationInfo?: string;
 }
 
 // Standard API response wrappers

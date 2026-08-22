@@ -13,7 +13,16 @@ const initializeStorage = (): Trip[] => {
   const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
   if (stored) {
     try {
-      return JSON.parse(stored);
+      const parsed = JSON.parse(stored) as Trip[];
+      // If any upgraded premium mock trips are missing, merge them in dynamically
+      const hasAllPremium = initialTrips.every(initTrip => parsed.some(p => p.id === initTrip.id));
+      if (hasAllPremium) {
+        return parsed;
+      }
+      const missing = initialTrips.filter(initTrip => !parsed.some(p => p.id === initTrip.id));
+      const merged = [...parsed, ...missing];
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(merged));
+      return merged;
     } catch (e) {
       console.error('Error parsing stored trips, resetting to mock data', e);
     }

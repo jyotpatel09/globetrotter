@@ -31,24 +31,24 @@ export const SharedTrip: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-[#faf9f7] py-20">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-background py-20">
         <span className="material-symbols-outlined text-[48px] animate-spin text-primary">progress_activity</span>
-        <p className="font-label-md text-deep-forest/60 mt-4">Retrieving shared itinerary...</p>
+        <p className="font-label-md text-primary/60 mt-4 font-semibold">Retrieving shared itinerary...</p>
       </div>
     );
   }
 
   if (!trip) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-[#faf9f7] p-8 text-center space-y-6">
-        <span className="material-symbols-outlined text-[64px] text-deep-forest/20">link_off</span>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-background p-8 text-center space-y-6">
+        <span className="material-symbols-outlined text-[64px] text-primary/20">link_off</span>
         <h2 className="font-headline-sm text-primary font-bold">Shared Trip Not Found</h2>
         <p className="font-body-md text-on-surface-variant max-w-sm">
           The link might have expired, or this trip is no longer public. Check the URL and try again.
         </p>
         <button
           onClick={() => navigate('/login')}
-          className="bg-primary text-white px-6 py-2 rounded-full font-label-sm"
+          className="bg-primary hover:bg-surface-tint text-on-primary px-6 py-2.5 rounded-xl font-semibold font-label-sm"
         >
           Go to GlobeTrotter
         </button>
@@ -120,18 +120,18 @@ export const SharedTrip: React.FC = () => {
   const timelineDays = getDays();
 
   return (
-    <div className="bg-[#faf9f7] min-h-screen text-on-surface flex flex-col justify-between">
+    <div className="bg-background min-h-screen text-on-surface flex flex-col justify-between">
       {/* Floating Top Bar */}
-      <header className="bg-white/70 backdrop-blur-md sticky top-0 border-b border-deep-forest/5 z-50 py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
+      <header className="bg-white/70 backdrop-blur-md sticky top-0 border-b border-outline-variant/30 z-50 py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
         <div className="flex items-center gap-3">
           <span className="font-headline-sm text-[22px] text-primary tracking-tight font-bold">GlobeTrotter</span>
-          <span className="text-[11px] font-label-sm text-secondary bg-secondary-container/20 border border-secondary/20 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+          <span className="text-[11px] font-label-sm text-secondary bg-secondary-container/20 border border-secondary/20 px-2.5 py-0.5 rounded-full uppercase tracking-wider font-semibold">
             Shared Journey
           </span>
         </div>
         <button
           onClick={() => navigate('/register')}
-          className="bg-primary hover:bg-secondary text-white font-label-sm text-[12px] px-6 py-2.5 rounded-full transition-all active:scale-95 shadow-sm"
+          className="bg-primary hover:bg-surface-tint text-on-primary font-label-sm text-[12px] px-6 py-2.5 rounded-xl transition-all active:scale-95 shadow-sm font-semibold"
         >
           Create Your Own Trip
         </button>
@@ -140,20 +140,34 @@ export const SharedTrip: React.FC = () => {
       {/* Main Container */}
       <main className="flex-grow max-w-4xl mx-auto w-full px-6 py-10 space-y-12">
         {/* Cover Banner */}
-        <div className="relative w-full h-[300px] md:h-[400px] rounded-[2rem] overflow-hidden shadow-md border border-deep-forest/10">
+        <div className="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-md border border-outline-variant/30">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url('${coverImage}')` }}
           ></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-deep-forest/90 via-deep-forest/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/20 to-transparent"></div>
           <div className="absolute bottom-8 left-8 md:left-12 text-white text-left">
-            <p className="font-label-sm text-[11px] tracking-wider uppercase text-white/70">Shared Curated Itinerary</p>
+            <p className="font-label-sm text-[11px] tracking-wider uppercase text-white/80 font-medium">Shared Curated Itinerary</p>
             <h2 className="font-display-lg text-[36px] md:text-[48px] font-bold leading-tight mt-1">{trip.name}</h2>
+            {trip.description && <p className="text-[14px] text-white/85 mt-1 font-body-md">{trip.description}</p>}
           </div>
         </div>
 
+        {/* Overview Block */}
+        {trip.fullDescription && (
+          <div className="bg-white border border-outline-variant/30 rounded-xl p-6 text-left shadow-sm">
+            <h3 className="font-label-sm text-[12px] uppercase text-terracotta tracking-wider font-semibold mb-2">Trip Overview</h3>
+            <p className="font-body-md text-on-surface-variant text-[14px] leading-relaxed">{trip.fullDescription}</p>
+            <div className="flex flex-wrap gap-6 mt-4 pt-4 border-t border-outline-variant/20 text-[13px] text-on-surface-variant">
+              <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[16px] text-secondary">explore</span> Style: {trip.travelStyle || 'Explore'}</span>
+              <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[16px] text-secondary">filter_hdr</span> Difficulty: {trip.difficulty || 'Easy'}</span>
+              <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[16px] text-secondary">wb_sunny</span> Season: {trip.bestSeason || 'Anytime'}</span>
+            </div>
+          </div>
+        )}
+
         {/* Timeline content */}
-        <div className="relative border-l-2 border-primary/10 ml-6 md:ml-36 pl-8 md:pl-12 space-y-12 py-4">
+        <div className="relative border-l-2 border-primary/20 ml-6 md:ml-36 pl-6 md:pl-8 space-y-12 py-4">
           {timelineDays.map((day, idx) => (
             <div key={idx} className="relative group text-left">
               {/* Left Timeline Tag - Desktop only */}
@@ -173,7 +187,7 @@ export const SharedTrip: React.FC = () => {
               </div>
 
               {/* Bullet circle along the vertical line */}
-              <span className="absolute -left-[41px] md:-left-[57px] top-1.5 w-4 h-4 rounded-full border-2 border-primary bg-white group-hover:bg-terracotta transition-colors" />
+              <span className="absolute -left-[33px] md:-left-[41px] top-1.5 w-4 h-4 rounded-full border-2 border-primary bg-white group-hover:bg-secondary transition-colors" />
 
               {/* Content body */}
               <div className="space-y-4 text-left">
@@ -189,7 +203,7 @@ export const SharedTrip: React.FC = () => {
                     {day.activities.map((tripAct) => (
                       <div
                         key={tripAct.id}
-                        className="bg-white border border-deep-forest/5 rounded-2xl shadow-sm overflow-hidden flex flex-col justify-between"
+                        className="bg-white border border-outline-variant/30 rounded-xl shadow-sm overflow-hidden flex flex-col justify-between"
                       >
                         <div className="h-32 relative overflow-hidden">
                           <img
@@ -200,7 +214,7 @@ export const SharedTrip: React.FC = () => {
                         </div>
                         <div className="p-5 space-y-3">
                           <div className="flex justify-between items-baseline gap-2">
-                            <h4 className="font-semibold text-deep-forest text-[15px] line-clamp-1">
+                            <h4 className="font-semibold text-primary text-[15px] line-clamp-1">
                               {tripAct.activity?.name}
                             </h4>
                             <span className="text-[12px] font-bold text-primary font-body-md shrink-0">
@@ -226,7 +240,7 @@ export const SharedTrip: React.FC = () => {
                     ))}
                   </div>
                 ) : (
-                  <div className="bg-white/40 border border-dashed border-outline-variant/50 rounded-2xl p-6 text-center text-on-surface-variant text-[13px] max-w-md">
+                  <div className="bg-white/40 border border-dashed border-outline-variant/30 rounded-xl p-6 text-center text-on-surface-variant text-[13px] max-w-md">
                     Resting or travel transit. No public activities scheduled.
                   </div>
                 )}
