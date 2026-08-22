@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import tripRoutes from './tripRoutes';
-// stopRoutes and activityRoutes will be handled as nested routes under trips usually, 
-// or separately depending on REST structure. Let's register them under trips.
+import authRoutes from './authRoutes';
 
 const router = Router();
 
 router.use('/trips', tripRoutes);
+router.use('/auth', authRoutes);
 
 export default router;

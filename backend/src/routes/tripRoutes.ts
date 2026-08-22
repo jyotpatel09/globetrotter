@@ -1,8 +1,12 @@
 import { Router } from 'express';
 import { getTrips, createTrip, getTripById, updateTrip, deleteTrip, getTripItinerary, getTripBudget, getTripTimeline } from '../controllers/tripController';
 import stopRoutes from './stopRoutes';
+import { requireAuth } from '../middleware/auth';
 
 const router = Router();
+
+// Protect all trip and nested routes
+router.use(requireAuth);
 
 router.get('/', getTrips);
 router.post('/', createTrip);

@@ -17,7 +17,7 @@ Error format:
 ```
 
 *Note: Database integration is prepared but cannot be tested against a live Postgres DB until the `DATABASE_URL` is configured.*
-*Note: Authentication is pending finalized provider details. Currently, endpoints requiring user identification may temporarily accept `userId` in the body/query.*
+*
 
 ---
 
@@ -142,3 +142,18 @@ Get the chronological timeline of events for a trip.
 - **Auth required**: Yes
 - **Response**: \200 OK\, \data\: Object containing \	rip\ summary and \events\ array. Events array is empty if no dates are set on any associated items.
 - **Error**: \404 Not Found\ (if the trip does not exist)
+
+---
+
+## Authentication
+### \GET /auth/me\
+Returns the authenticated application user.
+- **Auth required**: Yes (Bearer token via Authorization header)
+- **Header format**: \Authorization: Bearer <Supabase Access Token>\
+- **Response**: \200 OK\, \data\: User object
+- **Errors**: 
+  - \401 Missing authorization token\
+  - \401 Invalid authorization format\
+  - \401 Invalid or expired token\
+
+*Note on Trip & Stop APIs: All these routes require a valid Supabase access token in the Authorization header. Ownership is inferred automatically; \userId\ fields in requests will be ignored, and cross-user access will return a 404.*
